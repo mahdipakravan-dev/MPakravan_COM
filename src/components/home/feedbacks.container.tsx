@@ -1,8 +1,16 @@
-import { useTranslations } from 'next-intl'
 import FeedbacksSection from './feedbacks'
 
 async function FeedbacksContainer() {
-  return <FeedbacksSection />
+  const res = await fetch('https://api.mpakravan.com/api/collections/feedbacks/records', {
+    next: {
+      revalidate: 10,
+    },
+  })
+  const resp = await res.json()
+
+  console.log(resp)
+
+  return <FeedbacksSection feedbacks={resp.items} />
 }
 
 export default FeedbacksContainer

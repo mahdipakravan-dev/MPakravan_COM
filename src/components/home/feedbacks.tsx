@@ -5,7 +5,24 @@ import { useRef } from 'react'
 import { Button } from '../ui/button'
 import { useTranslations } from 'next-intl'
 
-function FeedbacksSection() {
+type Props = {
+  feedbacks: {
+    collectionId: string
+    collectionName: string
+    company: string
+    created: string
+    description: string
+    enCompany: string
+    enDescription: string
+    enName: string
+    enPosition: string
+    id: string
+    name: string
+    position: string
+    updated: string
+  }[]
+}
+function FeedbacksSection(props: Props) {
   const t = useTranslations('FeedbacksSection')
   const translations = {
     title: t('title'),
@@ -52,7 +69,7 @@ function FeedbacksSection() {
               className="flex justify-between items-center h-full space-x-4 md:px-12 feedback-wrapper animated-x"
               ref={wrapperRef}
             >
-              {Array.from({ length: 8 }).map((_, index) => (
+              {props.feedbacks.map((_, index) => (
                 <div
                   key={index}
                   className="min-w-[300px] relative py-4 border border-[#6e7d8752] px-4 feedback-round"
@@ -70,9 +87,7 @@ function FeedbacksSection() {
                   </span>
                   <div className="flex mt-2 justify-start items-start">
                     <div className="flex flex-col justify-start">
-                      <span className="text-md font-bold block text-white">
-                        {translations.feedback.name}
-                      </span>
+                      <span className="text-md font-bold block text-white">{_.enName}</span>
                       <span className="text-sm text-secondary">{translations.feedback.role}</span>
                       <span className="text-xs text-secondary">
                         {translations.feedback.company}
