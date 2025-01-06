@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 import { Orbitron } from 'next/font/google'
 import localFont from 'next/font/local'
-import '../globals.css'
-import { ProgressProvider } from '../../components/progress-provider'
 import { TailwindIndicator } from '../../components/tailwind-indicator'
 import { routing } from '../../i18n/routing'
+import '../globals.css'
 
 const orbitronFont = Orbitron({
   variable: '--font-orbitron',
@@ -42,16 +43,17 @@ export const metadata: Metadata = {
   description: 'Developer',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: Readonly<{
   children: React.ReactNode
-  params: { locale: string }
+  params: any
 }>) {
   if (!routing.locales.includes(locale as 'en' | 'fa')) {
     locale = 'en'
   }
+  const messages = await getMessages()
 
   return (
     <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
@@ -62,8 +64,10 @@ export default function RootLayout({
             : ` ${orbitronFont.className} ${orbitronFont.variable} antialiased`
         }
       >
-        {children}
-        <TailwindIndicator />
+        <NextIntlClientProvider messages={messages}>
+          {children}
+          <TailwindIndicator />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

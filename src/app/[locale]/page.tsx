@@ -1,15 +1,15 @@
+import ContactMeContainer from '@/components/home/contact-me.container'
+import FeedbacksContainer from '@/components/home/feedbacks.container'
+import FooterContainer from '@/components/home/footer.container'
+import PortfolioContainer from '@/components/home/portfolio.container'
+import ServicesContainer from '@/components/home/services.container'
+import { Icon } from '@/components/icon'
 import NavbarContainer from '@/components/shared/navbar.container'
-import useLang from '@/hooks/useLang'
-import { LogoEn, LogoFa } from '../../components/logo'
 import StarryBackground from '@/components/shared/StarryLayout'
+import useLang from '@/hooks/useLang'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { Icon } from '@/components/icon'
-import ServicesContainer from '@/components/home/services.container'
-import FeedbacksContainer from '@/components/home/feedbacks.container'
-import PortfolioContainer from '@/components/home/portfolio.container'
-import ContactMeContainer from '@/components/home/contact-me.container'
-import FooterContainer from '@/components/home/footer.container'
+import { LogoEn, LogoFa } from '../../components/logo'
 
 export default function HomePage() {
   const lang = useLang()

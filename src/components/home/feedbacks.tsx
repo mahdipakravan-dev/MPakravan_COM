@@ -3,8 +3,22 @@
 import Image from 'next/image'
 import { useRef } from 'react'
 import { Button } from '../ui/button'
+import { useTranslations } from 'next-intl'
 
-function FeedbacksSection({ t }: { t: Record<string, any> }) {
+function FeedbacksSection() {
+  const t = useTranslations('FeedbacksSection')
+  const translations = {
+    title: t('title'),
+    description: t('description'),
+    showMore: t('showMore'),
+    feedback: {
+      alt: t('feedback.alt'),
+      comment: t('feedback.comment'),
+      name: t('feedback.name'),
+      role: t('feedback.role'),
+      company: t('feedback.company'),
+    },
+  }
   const wrapperRef = useRef<HTMLDivElement>(null)
 
   const onClickRight = () => {
@@ -26,10 +40,10 @@ function FeedbacksSection({ t }: { t: Record<string, any> }) {
     >
       <div className="container flex flex-col md:flex-row justify-between items-center h-full">
         <div className="w-full h-full flex flex-col items-start justify-center">
-          <h6 className="text-3xl font-bold">{t['title']}</h6>
-          <p className="mt-8 leading-8 ltr:pr-6 rtl:text-lg rtl:leading-10">{t['description']}</p>
+          <h6 className="text-3xl font-bold">{t('title')}</h6>
+          <p className="mt-8 leading-8 ltr:pr-6 rtl:text-lg rtl:leading-10">{t('description')}</p>
           <Button variant="outline" disabled className="mt-4">
-            {t['showMore']}
+            {t('showMore')}
           </Button>
         </div>
         <div className="relative w-full h-full overflow-hidden">
@@ -52,13 +66,17 @@ function FeedbacksSection({ t }: { t: Record<string, any> }) {
                     className="absolute rounded-full -top-10 left-[30%]"
                   />
                   <span className=" text-secondary block mt-16 leading-6">
-                    {t.feedback.comment}
+                    {translations.feedback.comment}
                   </span>
                   <div className="flex mt-2 justify-start items-start">
                     <div className="flex flex-col justify-start">
-                      <span className="text-md font-bold block text-white">{t.feedback.name}</span>
-                      <span className="text-sm text-secondary">{t.feedback.role}</span>
-                      <span className="text-xs text-secondary">{t.feedback.company}</span>
+                      <span className="text-md font-bold block text-white">
+                        {translations.feedback.name}
+                      </span>
+                      <span className="text-sm text-secondary">{translations.feedback.role}</span>
+                      <span className="text-xs text-secondary">
+                        {translations.feedback.company}
+                      </span>
                     </div>
                   </div>
                 </div>
