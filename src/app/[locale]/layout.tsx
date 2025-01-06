@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
-import { Orbitron } from "next/font/google";
+import type { Metadata } from 'next'
+import { Orbitron } from 'next/font/google'
 import localFont from 'next/font/local'
-import "../globals.css";
-import { ProgressProvider } from "../../components/progress-provider";
-import { TailwindIndicator } from "../../components/tailwind-indicator";
-import { routing } from "../../i18n/routing";
+import '../globals.css'
+import { ProgressProvider } from '../../components/progress-provider'
+import { TailwindIndicator } from '../../components/tailwind-indicator'
+import { routing } from '../../i18n/routing'
 
 const orbitronFont = Orbitron({
-  variable: "--font-orbitron",
-  subsets: ["latin"],
-});
+  variable: '--font-orbitron',
+  subsets: ['latin'],
+})
 
 const morabbaFont = localFont({
-  variable: "--font-morabba",
+  variable: '--font-morabba',
   src: [
     {
       path: '../../fonts/morabba/fonts/woff2/Morabba-UltraLight.woff2',
@@ -38,35 +38,33 @@ const morabbaFont = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "Mahdi Pakravan",
-  description: "Developer",
-};
+  title: 'Mahdi Pakravan',
+  description: 'Developer',
+}
 
 export default function RootLayout({
   children,
   params: { locale },
 }: Readonly<{
-  children: React.ReactNode;
-  params : {locale : string}
+  children: React.ReactNode
+  params: { locale: string }
 }>) {
-
-  if (!routing.locales.includes(locale as "en" | "fa")) {
-    locale = "en"
+  if (!routing.locales.includes(locale as 'en' | 'fa')) {
+    locale = 'en'
   }
 
   return (
-    <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
+    <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
       <body
-        className={locale === "fa" 
-          ? `${morabbaFont.className} ${morabbaFont.variable}` 
-          : ` ${orbitronFont.className} ${orbitronFont.variable} antialiased`
+        className={
+          locale === 'fa'
+            ? `${morabbaFont.className} ${morabbaFont.variable}`
+            : ` ${orbitronFont.className} ${orbitronFont.variable} antialiased`
         }
       >
-        <ProgressProvider>
-          {children}
-          <TailwindIndicator/>
-        </ProgressProvider>
+        {children}
+        <TailwindIndicator />
       </body>
     </html>
-  );
+  )
 }

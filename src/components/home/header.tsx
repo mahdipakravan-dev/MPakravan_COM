@@ -1,20 +1,14 @@
-import NavbarContainer from '@/components/shared/navbar.container'
 import useLang from '@/hooks/useLang'
-import { LogoEn, LogoFa } from '../../components/logo'
-import StarryBackground from '@/components/shared/StarryLayout'
-import { useTranslations } from 'next-intl'
+import StarryBackground from '../shared/StarryLayout'
+import { LogoEn, LogoFa } from '../logo'
+import NavbarContainer from '../shared/navbar.container'
 import Image from 'next/image'
-import { Icon } from '@/components/icon'
-import ServicesContainer from '@/components/home/services.container'
-import FeedbacksContainer from '@/components/home/feedbacks.container'
-import PortfolioContainer from '@/components/home/portfolio.container'
-import ContactMeContainer from '@/components/home/contact-me.container'
-import FooterContainer from '@/components/home/footer.container'
+import { Icon } from '../icon'
+import { useTranslations } from 'next-intl'
 
-export default function HomePage() {
+function Header() {
   const lang = useLang()
-  const t = useTranslations()
-
+  const t = useTranslations('HomePageHero')
   return (
     <>
       <StarryBackground rootClassName="h-[80vh]">
@@ -29,15 +23,15 @@ export default function HomePage() {
         <div className="h-full flex flex-col md:flex-row justify-center items-center container   relative">
           <div className="flex flex-col justify-center items-center relative  animate-fade-in">
             <h1 className="text-xl md:text-3xl font-bold mb-4 !text-center">
-              {t('HomePageHero.hi')}
-              <span className="animate-pulse mx-3">{t('HomePageHero.name')}</span>
+              {t('hi')}
+              <span className="animate-pulse mx-3">{t('name')}</span>
             </h1>
             <h2 className="text-[18px] !text-center sm:text-lg font-semibold text-primary mb-6">
-              {t('HomePageHero.job')}
+              {t('job')}
             </h2>
 
             <p className="mx-auto max-w-3xl rtl:max-w-xl rtl:text-xl rtl:leading-[40px] ltr:leading-[30px] text-md text-mt-8 opacity-80 md:px-14 !text-center leading-9">
-              {t('HomePageHero.description')}
+              {t('description')}
             </p>
           </div>
         </div>
@@ -46,7 +40,7 @@ export default function HomePage() {
       <div className="w-full flex justify-center items-center -translate-y-10 container relative z-[2]">
         <video
           className="rounded shadow-lg z-[0]"
-          src={t('HomePageHero.video')}
+          src={t('video')}
           poster="/images/movie-preview.png"
           muted
           autoPlay
@@ -66,12 +60,8 @@ export default function HomePage() {
           className="absolute animate-shallow z-[-1]"
         />
       </div>
-
-      <ServicesContainer />
-      <FeedbacksContainer />
-      <PortfolioContainer />
-      <ContactMeContainer />
-      <FooterContainer />
     </>
   )
 }
+
+export default Header

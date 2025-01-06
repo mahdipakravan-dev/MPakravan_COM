@@ -99,7 +99,7 @@ body::before {
     bottom: 0;
     background: rgba(26, 27, 30 , 0.9);
     pointer-events: none; /* Ensure it doesn't interfere with interactions */
-    z-index: 0;
+    z-index: -1;
 }
 
 #starry {
