@@ -1,0 +1,55 @@
+﻿/**
+*
+*	Name:			Morabba Fonts
+*	Version:			1.0
+*	Author:			Hasan Manzoori (moslemebrahimi.com)
+*	Created on:		Apr 22, 2021
+*	Updated on:		Apr 22, 2021
+*	Website:			http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونتمربع Xا یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+Morabba fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+------------------------------------------------------------------------------------- fonts/-
+*
+**/
+
+
+
+
+@font-face {
+	font-family: Morabba;
+	font-style: normal;
+	font-weight: 200;
+	src: url('/fonts/woff/Morabba-UltraLight.woff') format('woff'),
+	url('/fonts/woff2/Morabba-UltraLight.woff2') format('woff2');
+}
+
+
+
+@font-face {
+	font-family: Morabba;
+	font-style: normal;
+	font-weight: 900;
+	src: url('/fonts/woff/Morabba-Heavy.woff') format('woff'),
+	url('/fonts/woff2/Morabba-Heavy.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Morabba;
+	font-style: normal;
+	font-weight: bold;
+	src: url('/fonts/woff/Morabba-bold.woff') format('woff'),
+	url('/fonts/woff2/Morabba-bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Morabba;
+	font-style: normal;
+	font-weight: normal;
+	src: url('/fonts/woff/Morabba-regular.woff') format('woff'),
+	url('/fonts/woff2/Morabba-regular.woff2') format('woff2');
+}

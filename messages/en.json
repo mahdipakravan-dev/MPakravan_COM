@@ -1,0 +1,83 @@
+{
+    "config" : {
+      "language": "en",
+      "displayName" : "English"
+    },
+    "HomePageHero": {
+      "hi": "Hi I'm",
+      "name": "Mahdi Pakravan",
+      "job": "Here to help you create experiences beyond earthly expectations.",
+      "description": "Whether you're learning web development or looking for professional web design, I’m here with innovative design, secure development, and expert mentorship.",
+      "video" : "https://persian17.asset.aparat.com/aparat-video/c75a2385d3cb26aae174940b6d7a2da361268571-720p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjhhNzE4NGVlOTQ5YmNhOTFiOWZhMTQ5ZjQwNTFjNGVmIiwiZXhwIjoxNzMyODIzOTUzLCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.KJCf8zuvXfXCWbYpyoHTcdZwt_DYlbMnpkmwHrZkjXI"
+    },
+    "Sections": {
+      "home" : "Home",
+      "about" : "About",
+      "portfolio" : "Portfolio",
+      "contact" : "Contact Me",
+      "feedbacks" : "Feedbacks",
+      "blog" : "Blog",
+      "services" : "Services"
+    },
+    "services": {
+      "heading": "What do I do?",
+      "description": "With over 6 years of experience in frontend development, I've completed more than 20 projects for clients in Iran, Kuwait, the USA, and other countries.",
+      "button": "Download Resume",
+      "websiteDevelopment": {
+        "title": "Website Development",
+        "description": "Building and maintaining websites and web applications using technologies like HTML, CSS, and JavaScript."
+      },
+      "websiteDesign": {
+        "title": "Website Design",
+        "description": "Creating the visual appearance and layout of websites and web applications."
+      },
+      "websiteSecurity": {
+        "title": "Website Security",
+        "description": "Ensuring the security of websites and web applications by implementing security measures such as encryption and authentication."
+      },
+      "websiteMentorship": {
+        "title": "Website Mentorship",
+        "description": "Providing guidance and advice to individuals and teams on website development and design."
+      }
+    },
+    "FeedbacksSection": {
+      "title": "Feedbacks",
+      "description": "Your feedback means the world to me. Here, you'll find reviews from my clients and collaborators who have shared their experience working with me.",
+      "showMore": "Show more feedbacks",
+      "feedback": {
+        "alt": "Feedback image",
+        "comment": "Mahdi has a very deep knowledge of Frontend Development and making websites. I worked with him, and he is fantastic. I highly recommend Mahdi!",
+        "name": "Mo.Ali Ali Panah",
+        "role": "Software Engineer",
+        "company": "Digikala"
+      }
+    },
+    "PortfolioSection": {
+      "greenTitle" : "My",
+      "whiteTitle" : "Portfolio",
+      "description": "In this section, you can explore some of the projects I've worked on and the results achieved with my clients. Each project tells a unique story, and by clicking on them, you can learn more."
+    },
+    "ContactMeSection" : {
+      "contactMeTitleWhite": "Contact",
+      "contactMeTitleGreen": "Me",
+      "contactUs": "Contact Us",
+      "developDream": "Let's Develop Your Dream!",
+      "name": "Name",
+      "phoneNumber": "Phone Number",
+      "message": "Message",
+      "placeholderName": "Please enter your name",
+      "placeholderPhone": "Please enter your phone number",
+      "placeholderMessage": "Your Message",
+      "button": "Connect Together!",
+      "loremText": "If you have any questions or want to start a new collaboration, I’m always ready to get in touch. You can reach out to me via the form below, and I’ll respond as soon as possible. Whether it’s about a new project or seeking advice, I’d be happy to collaborate with you and turn your ideas into reality.",
+      "phone": "Phone Number",
+      "instagram": "Instagram",
+      "github": "Github"
+    },
+    "FooterSection": {
+      "description": "Focusing on the discipline, colors, and emotions of your brand, I create a website that not only reflects your values but also provides an unforgettable experience for users.",
+      "col2Title" : "Services",
+      "col3Title" : "Quick Links",
+      "copyRight" : "Design + Development + Security with ❤ by Mpakravan"
+    }
+  }
