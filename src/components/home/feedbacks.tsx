@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useRef } from 'react'
 import { Button } from '../ui/button'
 import { useTranslations } from 'next-intl'
+import useLang from '@/hooks/useLang'
 
 type Props = {
   feedbacks: {
@@ -20,22 +21,13 @@ type Props = {
     name: string
     position: string
     updated: string
+    img?: string
   }[]
 }
 function FeedbacksSection(props: Props) {
   const t = useTranslations('FeedbacksSection')
-  const translations = {
-    title: t('title'),
-    description: t('description'),
-    showMore: t('showMore'),
-    feedback: {
-      alt: t('feedback.alt'),
-      comment: t('feedback.comment'),
-      name: t('feedback.name'),
-      role: t('feedback.role'),
-      company: t('feedback.company'),
-    },
-  }
+  const lang = useLang()
+
   const wrapperRef = useRef<HTMLDivElement>(null)
 
   const onClickRight = () => {
@@ -69,28 +61,35 @@ function FeedbacksSection(props: Props) {
               className="flex justify-between items-center h-full space-x-4 md:px-12 feedback-wrapper animated-x"
               ref={wrapperRef}
             >
-              {props.feedbacks.map((_, index) => (
+              {props.feedbacks.map((feedback, index) => (
                 <div
                   key={index}
                   className="min-w-[300px] relative py-4 border border-[#6e7d8752] px-4 feedback-round"
                 >
                   <div className="absolute inset-0 bg-shadow-gradient pointer-events-none feedback-round"></div>
                   <Image
-                    src="/images/testimonials/alipanah.jpg"
+                    src={`https://api.mpakravan.com/api/files/${feedback.collectionId}/${feedback.id}/${feedback.img}`}
                     alt={'ALt'}
                     width={100}
                     height={100}
                     className="absolute rounded-full -top-10 left-[30%]"
                   />
-                  <span className=" text-secondary block mt-16 leading-6">
-                    {translations.feedback.comment}
-                  </span>
+                  <p
+                    className=" text-secondary block mt-16 leading-6 overflow-hidden overflow-wrap break-word h-[120px]"
+                    dangerouslySetInnerHTML={{
+                      __html: `${lang === 'en' ? feedback.enDescription : feedback.description}`,
+                    }}
+                  />
                   <div className="flex mt-2 justify-start items-start">
                     <div className="flex flex-col justify-start">
-                      <span className="text-md font-bold block text-white">{_.enName}</span>
-                      <span className="text-sm text-secondary">{translations.feedback.role}</span>
+                      <span className="text-md font-bold block text-white">
+                        {lang === 'en' ? feedback.enName : feedback.name}
+                      </span>
+                      <span className="text-sm text-secondary">
+                        {lang === 'en' ? feedback.enPosition : feedback.position}
+                      </span>
                       <span className="text-xs text-secondary">
-                        {translations.feedback.company}
+                        {lang === 'en' ? feedback.enCompany : feedback.company}
                       </span>
                     </div>
                   </div>

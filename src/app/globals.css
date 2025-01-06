@@ -226,16 +226,32 @@ pre.shiki .highlighted {
 }
 
 .animated-x {
-    animation: animated-x 40s ease infinite;
-}
-@keyframes animated-x {
+    display: flex;
+    gap: 2rem; /* Space between items */
+    animation: animated-x-large 4s linear infinite alternate; /* Default for large screens */
+  }
+  
+  @keyframes animated-x-large {
     0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-60%);
+      transform: translateX(0);
     }
     100% {
-        transform: translateX(0);
+      transform: translateX(-76%);
     }
-}
+  }
+  
+  @media (max-width: 740px) {
+    .animated-x {
+      animation: animated-x-small 4s linear infinite alternate;
+    }
+  
+    @keyframes animated-x-small {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-90%);
+      }
+    }
+  }
+  

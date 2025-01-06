@@ -5,6 +5,7 @@ async function FeedbacksContainer() {
     next: {
       revalidate: 10,
     },
+    cache: 'no-cache',
   })
   const resp = await res.json()
 
