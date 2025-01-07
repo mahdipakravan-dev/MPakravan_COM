@@ -12,16 +12,6 @@ import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const getRandomGradient = () => {
-  const gradients = [
-    'linear-gradient(135deg, #315b48, #1a1a1a)',
-    'linear-gradient(135deg, #315b48, #2c3e50)',
-    'linear-gradient(135deg, #315b48, #34495e)',
-    'linear-gradient(135deg, #315b48, #22313f)',
-  ]
-  return gradients[Math.floor(Math.random() * gradients.length)]
-}
-
 type Filters = 'all' | 'react' | 'node' | 'wp'
 type Props = {
   portfolios: {
@@ -123,11 +113,13 @@ const PortfolioSection = ({ portfolios }: Props) => {
       <div className="mt-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8">
           {filteredPortfolios.map((portfolio, index) => (
-            <Link href={portfolio.url || '#'} target="_blank" rel="noopener noreferrer">
-              <div
-                key={index}
-                className="relative w-full min-w-[200px] overflow-hidden rounded-md shadow-lg project-card group transform transition-transform duration-300 hover:scale-105"
-              >
+            <Link
+              key={`po_${portfolio.id}`}
+              href={portfolio.url || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="relative w-full min-w-[200px] overflow-hidden rounded-md shadow-lg project-card group transform transition-transform duration-300 hover:scale-105">
                 <Image
                   src={makeImageUrl(
                     portfolio.collectionId,
@@ -146,10 +138,8 @@ const PortfolioSection = ({ portfolios }: Props) => {
                   className={cn(
                     `absolute cursor-pointer inset-0 opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center`,
                     'flex flex-col',
+                    'bg-gradient-to-br from-[#315b48] to-[#1a1a1a]',
                   )}
-                  style={{
-                    background: getRandomGradient(),
-                  }}
                 >
                   <p className="text-white text-lg font-semibold tracking-wide text-center px-4">
                     {lang === 'en' ? portfolio.nameEn : portfolio.name}
@@ -167,14 +157,7 @@ const PortfolioSection = ({ portfolios }: Props) => {
                     {portfolio.url && (
                       <p className="text-xs">
                         <span className="font-semibold">URL:</span>{' '}
-                        <a
-                          href={portfolio.url || '#'}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-200 hover:underline"
-                        >
-                          Visit
-                        </a>
+                        <span className="text-blue-200 hover:underline">Visit</span>
                       </p>
                     )}
                   </div>

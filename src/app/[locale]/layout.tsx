@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { Orbitron } from 'next/font/google'
 import localFont from 'next/font/local'
 import { TailwindIndicator } from '../../components/tailwind-indicator'
@@ -50,6 +50,9 @@ export default async function RootLayout({
   children: React.ReactNode
   params: any
 }>) {
+  // Enable static rendering
+  setRequestLocale(locale)
+
   if (!routing.locales.includes(locale as 'en' | 'fa')) {
     locale = 'en'
   }

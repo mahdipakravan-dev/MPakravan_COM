@@ -6,6 +6,12 @@ import { Button } from '../ui/button'
 import { useTranslations } from 'next-intl'
 import useLang from '@/hooks/useLang'
 import { makeImageUrl } from '@/lib/utils'
+import dynamic from 'next/dynamic'
+
+const FeedbackDescription = dynamic(() => import('./feedback.desc'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+})
 
 type Props = {
   feedbacks: {
@@ -64,7 +70,7 @@ function FeedbacksSection(props: Props) {
             >
               {props.feedbacks.map((feedback, index) => (
                 <div
-                  key={index}
+                  key={`fe_${feedback.id}`}
                   className="min-w-[300px] relative py-4 border border-[#6e7d8752] px-4 feedback-round"
                 >
                   <div className="absolute inset-0 bg-shadow-gradient pointer-events-none feedback-round"></div>
@@ -79,11 +85,8 @@ function FeedbacksSection(props: Props) {
                     height={100}
                     className="absolute rounded-full -top-10 left-[30%]"
                   />
-                  <p
-                    className=" text-secondary block mt-16 leading-6 overflow-hidden overflow-wrap break-word h-[120px]"
-                    dangerouslySetInnerHTML={{
-                      __html: `${lang === 'en' ? feedback.enDescription : feedback.description}`,
-                    }}
+                  <FeedbackDescription
+                    description={lang === 'en' ? feedback.enDescription : feedback.description}
                   />
                   <div className="flex mt-2 justify-start items-start">
                     <div className="flex flex-col justify-start">
