@@ -8,8 +8,11 @@ import { NavigationMenuLink } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 
 import { Icons } from '@/components/icon'
+import useLang from '@/hooks/useLang'
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 
 export function Navbar(props: { translations: Record<string, string> }) {
+  const lang = useLang()
   return (
     <nav className="hidden md:flex justify-end">
       <ul className="flex justify-between gap-12 rtl:text-lg" key={'navbar'}>
@@ -108,6 +111,21 @@ export function Navbar(props: { translations: Record<string, string> }) {
             {props.translations['contact']}
           </Link>
         </li>
+
+        <Popover>
+          <PopoverTrigger>{props.translations["language"]}</PopoverTrigger>
+          <PopoverContent side="bottom" align="end" className="mt-4">
+            <ul className="flex gap-y-2 flex-col justify-start" key={'navbar'}>
+              <li className="hover:bg-primary transition-all duration-300 ease-in-out px-2 rounded-md">
+                <Link href={'/en'}>English</Link>
+              </li>
+
+              <li className="hover:bg-primary transition-all duration-300 ease-in-out px-2 rounded-md">
+                <Link href={'/fa'}>فارسی</Link>
+              </li>
+            </ul>
+          </PopoverContent>
+        </Popover>
       </ul>
     </nav>
   )

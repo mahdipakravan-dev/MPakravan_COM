@@ -89,7 +89,7 @@ const PortfolioSection = ({ portfolios }: Props) => {
         {t('description')}
       </p>
 
-      <div className="flex justify-center gap-2 mt-12">
+      <div className="flex flex-wrap justify-center gap-2 mt-12">
         <Button
           variant={'outlinePrimary'}
           className={filter === 'all' && 'bg-primary text-white'}

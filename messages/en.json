@@ -17,7 +17,8 @@
       "contact" : "Contact Me",
       "feedbacks" : "Feedbacks",
       "blog" : "Blog",
-      "services" : "Services"
+      "services" : "Services",
+      "language" : "Language"
     },
     "services": {
       "heading": "What do I do?",

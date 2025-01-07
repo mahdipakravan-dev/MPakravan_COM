@@ -29,9 +29,6 @@ export default function HomePage() {
 
         <div className="h-full flex flex-col md:flex-row justify-center items-center container   relative">
           <div className="flex flex-col justify-center items-center relative  animate-fade-in">
-            <div className="absolute inset">
-              <HeroSvgBorders />
-            </div>
             <h1 className="text-xl md:text-3xl font-bold mb-4 !text-center">
               {t('HomePageHero.hi')}
               <span className="animate-pulse mx-3">{t('HomePageHero.name')}</span>

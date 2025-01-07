@@ -17,7 +17,8 @@
     "contact" : "تماس با من",
     "feedbacks" : "بازخورد ها",
     "blog" : "وبلاگ",
-    "services" : "خدمات"
+    "services" : "خدمات",
+    "language" : "زبان"
   },
   "services": {
       "heading": "من چیکار میکنم ؟",

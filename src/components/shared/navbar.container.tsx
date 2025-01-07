@@ -12,8 +12,9 @@ function NavbarContainer() {
     portfolio: t('portfolio'),
     contact: t('contact'),
     blog: t('blog'),
+    language: t('language'),
   }
-  return (  
+  return (
     <>
       <Navbar translations={translations} />
       <MobileNav translations={translations} />
