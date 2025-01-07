@@ -63,7 +63,7 @@
       "contactUs": "Contact Us",
       "developDream": "Let's Develop Your Dream!",
       "name": "Name",
-      "phoneNumber": "Phone Number",
+      "phoneNumber": "Email / Phone Number",
       "message": "Message",
       "placeholderName": "Please enter your name",
       "placeholderPhone": "Please enter your phone number",
@@ -72,7 +72,8 @@
       "loremText": "If you have any questions or want to start a new collaboration, I’m always ready to get in touch. You can reach out to me via the form below, and I’ll respond as soon as possible. Whether it’s about a new project or seeking advice, I’d be happy to collaborate with you and turn your ideas into reality.",
       "phone": "Phone Number",
       "instagram": "Instagram",
-      "github": "Github"
+      "github": "Github",
+      "loading" : "Loading..."
     },
     "FooterSection": {
       "description": "Focusing on the discipline, colors, and emotions of your brand, I create a website that not only reflects your values but also provides an unforgettable experience for users.",
