@@ -14,7 +14,7 @@ import HeroSvgBorders from '@/components/home/svg-borders'
 import { setRequestLocale } from 'next-intl/server'
 
 type Props = {
-  params: { locale: string }
+  params: any
 }
 
 export default function Page({ params: { locale } }: Props) {
