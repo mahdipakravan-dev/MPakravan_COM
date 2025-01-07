@@ -11,3 +11,7 @@ export const shineAnimation =
 export function randomInt(max : number) {
     return Math.floor(Math.random() * max);
 }
+
+export function makeImageUrl(collectionId: string, recordId: string, fileName: string) {
+    return `https://api.mpakravan.com/api/files/${collectionId}/${recordId}/${fileName}`
+}

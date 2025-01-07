@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { Button } from '../ui/button'
 import { useTranslations } from 'next-intl'
 import useLang from '@/hooks/useLang'
+import { makeImageUrl } from '@/lib/utils'
 
 type Props = {
   feedbacks: {
@@ -58,7 +59,7 @@ function FeedbacksSection(props: Props) {
         <div className="relative w-full h-full overflow-hidden">
           <div className="absolute left-0 top-0 h-full overflow-x-hidden overflow-y-visible">
             <div
-              className="flex justify-between items-center h-full space-x-4 md:px-12 feedback-wrapper animated-x"
+              className="flex justify-between items-center h-full space-x-2 md:px-6 feedback-wrapper animated-x"
               ref={wrapperRef}
             >
               {props.feedbacks.map((feedback, index) => (
@@ -68,7 +69,11 @@ function FeedbacksSection(props: Props) {
                 >
                   <div className="absolute inset-0 bg-shadow-gradient pointer-events-none feedback-round"></div>
                   <Image
-                    src={`https://api.mpakravan.com/api/files/${feedback.collectionId}/${feedback.id}/${feedback.img}`}
+                    src={makeImageUrl(
+                      feedback.collectionId,
+                      feedback.id,
+                      feedback.img || 'default.png',
+                    )}
                     alt={'ALt'}
                     width={100}
                     height={100}

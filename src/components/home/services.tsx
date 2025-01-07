@@ -68,7 +68,7 @@ const Services = ({ t }: { t: Record<string, any> }) => {
           </p>
           <Button
             onClick={() => {
-              window.open('https://mpakravan.ir/docs/cv.pdf', '_blank')
+              window.open('/docs/cv.pdf', '_blank')
             }}
             variant="outlinePrimary"
             className="mt-2 w-full rtl:text-lg"

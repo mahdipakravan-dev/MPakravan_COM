@@ -1,14 +1,18 @@
-import { useTranslations } from 'next-intl'
 import PortfolioSection from './portfolio'
 
-function PortfolioContainer() {
-  const t = useTranslations('PortfolioSection')
-  const translations = {
-    greenTitle: t('greenTitle'),
-    whiteTitle: t('whiteTitle'),
-    description: t('description'),
-  }
-  return <PortfolioSection t={translations} />
+async function PortfolioContainer() {
+  const res = await fetch(
+    'https://api.mpakravan.com/api/collections/portfolio/records?sort=-created',
+    {
+      next: {
+        revalidate: 10,
+      },
+      cache: process.env.NODE_ENV === 'development' ? 'no-store' : 'force-cache',
+    },
+  )
+  const resp = await res.json()
+
+  return <PortfolioSection portfolios={resp.items} />
 }
 
 export default PortfolioContainer

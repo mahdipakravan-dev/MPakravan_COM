@@ -5,11 +5,9 @@ async function FeedbacksContainer() {
     next: {
       revalidate: 10,
     },
-    cache: 'no-cache',
+    cache: process.env.NODE_ENV === 'development' ? 'no-store' : 'force-cache',
   })
   const resp = await res.json()
-
-  console.log(resp)
 
   return <FeedbacksSection feedbacks={resp.items} />
 }

@@ -10,6 +10,7 @@ import useLang from '@/hooks/useLang'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { LogoEn, LogoFa } from '../../components/logo'
+import HeroSvgBorders from '@/components/home/svg-borders'
 
 export default function HomePage() {
   const lang = useLang()
@@ -28,6 +29,9 @@ export default function HomePage() {
 
         <div className="h-full flex flex-col md:flex-row justify-center items-center container   relative">
           <div className="flex flex-col justify-center items-center relative  animate-fade-in">
+            <div className="absolute inset">
+              <HeroSvgBorders />
+            </div>
             <h1 className="text-xl md:text-3xl font-bold mb-4 !text-center">
               {t('HomePageHero.hi')}
               <span className="animate-pulse mx-3">{t('HomePageHero.name')}</span>
@@ -36,7 +40,7 @@ export default function HomePage() {
               {t('HomePageHero.job')}
             </h2>
 
-            <p className="mx-auto max-w-3xl rtl:max-w-xl rtl:text-xl rtl:leading-[40px] ltr:leading-[30px] text-md text-mt-8 opacity-80 md:px-14 !text-center leading-9">
+            <p className="mx-auto max-w-2xl rtl:max-w-xl rtl:text-xl rtl:leading-[40px] ltr:leading-[30px] text-md text-mt-8 opacity-80 md:px-14 !text-center leading-9">
               {t('HomePageHero.description')}
             </p>
           </div>

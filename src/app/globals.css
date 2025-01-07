@@ -2,20 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root[dir="ltr"] {
-    --font-family: var(--font-orbitron) !important;
-}
-
-:root[dir="rtl"] {
-    --font-family: var(--font-morabba);
-}
-
 :root[dir="rtl"] * {
+    --font-family: var(--font-morabba);
     direction: rtl;
     text-align: right;
 }
   
 :root[dir="ltr"] * {
+    --font-family: var(--font-orbitron) !important;
     direction: ltr;
     text-align: left;
 }
@@ -23,6 +17,7 @@
 
 @layer base {
     :root {
+        --x-animation-duration : 16s;
         --tw-ring-offset-width : 0;
         --primary: #2D6B4F;
         --primary-foreground: 0 0% 98%;
@@ -228,7 +223,7 @@ pre.shiki .highlighted {
 .animated-x {
     display: flex;
     gap: 2rem; /* Space between items */
-    animation: animated-x-large 4s linear infinite alternate; /* Default for large screens */
+    animation: animated-x-large var(--x-animation-duration) linear infinite alternate; /* Default for large screens */
   }
   
   @keyframes animated-x-large {
@@ -242,7 +237,7 @@ pre.shiki .highlighted {
   
   @media (max-width: 740px) {
     .animated-x {
-      animation: animated-x-small 4s linear infinite alternate;
+      animation: animated-x-small var(--x-animation-duration) linear infinite alternate;
     }
   
     @keyframes animated-x-small {
@@ -253,5 +248,40 @@ pre.shiki .highlighted {
         transform: translateX(-90%);
       }
     }
+  }
+  
+
+  /* Apply this CSS to the SVG container or directly to the SVG elements */
+@keyframes draw {
+    0% {
+      stroke-dasharray: 0, 1000;
+      stroke-opacity: 0;
+    }
+    100% {
+      stroke-dasharray: 1000, 0;
+      stroke-opacity: 0.44;
+    }
+  }
+  
+  svg line, svg path {
+    stroke-dasharray: 0, 1000;
+    animation: draw 1s ease-in-out forwards;
+  }
+  
+  /* Optional: Define timing for different lines */
+  svg line:nth-child(1) {
+    animation-delay: 0s;
+  }
+  svg line:nth-child(2) {
+    animation-delay: 1s;
+  }
+  svg line:nth-child(3) {
+    animation-delay: 2s;
+  }
+  svg line:nth-child(4) {
+    animation-delay: 1s;
+  }
+  svg path {
+    animation-delay: 2s; /* Delay for path lines */
   }
   
