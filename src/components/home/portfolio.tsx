@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useTranslations } from 'next-intl'
 import { cn, makeImageUrl } from '@/lib/utils'
 import useLang from '@/hooks/useLang'
+import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -122,62 +123,64 @@ const PortfolioSection = ({ portfolios }: Props) => {
       <div className="mt-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8">
           {filteredPortfolios.map((portfolio, index) => (
-            <div
-              key={index}
-              className="relative w-full min-w-[200px] overflow-hidden rounded-md shadow-lg project-card group transform transition-transform duration-300 hover:scale-105"
-            >
-              <Image
-                src={makeImageUrl(
-                  portfolio.collectionId,
-                  portfolio.id,
-                  portfolio.images[0] || 'default.png',
-                )}
-                objectFit="contain"
-                // fill
-                width={300}
-                height={160}
-                alt="PROJECT"
-                className="rounded-md"
-              />
-
+            <Link href={portfolio.url || '#'} target="_blank" rel="noopener noreferrer">
               <div
-                className={cn(
-                  `absolute cursor-pointer inset-0 opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center`,
-                  'flex flex-col',
-                )}
-                style={{
-                  background: getRandomGradient(),
-                }}
+                key={index}
+                className="relative w-full min-w-[200px] overflow-hidden rounded-md shadow-lg project-card group transform transition-transform duration-300 hover:scale-105"
               >
-                <p className="text-white text-lg font-semibold tracking-wide text-center px-4">
-                  {lang === 'en' ? portfolio.nameEn : portfolio.name}
-                </p>
+                <Image
+                  src={makeImageUrl(
+                    portfolio.collectionId,
+                    portfolio.id,
+                    portfolio.images[0] || 'default.png',
+                  )}
+                  objectFit="contain"
+                  // fill
+                  width={300}
+                  height={160}
+                  alt="PROJECT"
+                  className="rounded-md"
+                />
 
                 <div
                   className={cn(
-                    'text-center space-y-2 opacity-0 group-hover:opacity-100 transition-all duration-75',
-                    'absolute bottom-2 left-10',
+                    `absolute cursor-pointer inset-0 opacity-60 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center`,
+                    'flex flex-col',
                   )}
+                  style={{
+                    background: getRandomGradient(),
+                  }}
                 >
-                  <p className="text-xs">
-                    <span className="font-semibold">Employer:</span> {portfolio.employer || 'N/A'}
+                  <p className="text-white text-lg font-semibold tracking-wide text-center px-4">
+                    {lang === 'en' ? portfolio.nameEn : portfolio.name}
                   </p>
-                  {portfolio.url && (
+
+                  <div
+                    className={cn(
+                      'text-center space-y-2 opacity-0 group-hover:opacity-100 transition-all duration-75',
+                      'absolute bottom-2 left-10',
+                    )}
+                  >
                     <p className="text-xs">
-                      <span className="font-semibold">URL:</span>{' '}
-                      <a
-                        href={portfolio.url || '#'}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-200 hover:underline"
-                      >
-                        Visit
-                      </a>
+                      <span className="font-semibold">Employer:</span> {portfolio.employer || 'N/A'}
                     </p>
-                  )}
+                    {portfolio.url && (
+                      <p className="text-xs">
+                        <span className="font-semibold">URL:</span>{' '}
+                        <a
+                          href={portfolio.url || '#'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-200 hover:underline"
+                        >
+                          Visit
+                        </a>
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
