@@ -11,8 +11,14 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { LogoEn, LogoFa } from '../../components/logo'
 import HeroSvgBorders from '@/components/home/svg-borders'
+import { setRequestLocale } from 'next-intl/server'
 
-export default function HomePage() {
+type Props = {
+  params: { locale: string }
+}
+
+export default function Page({ params: { locale } }: Props) {
+  setRequestLocale(locale)
   const lang = useLang()
   const t = useTranslations()
 
