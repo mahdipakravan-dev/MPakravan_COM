@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { Orbitron } from 'next/font/google'
 import localFont from 'next/font/local'
 import { TailwindIndicator } from '../../components/tailwind-indicator'
@@ -45,14 +45,6 @@ export const metadata: Metadata = {
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
-}
-
-export async function generateMetadata({ params: { locale } }: any) {
-  const t = await getTranslations({ locale, namespace: 'LocaleLayout' })
-
-  return {
-    title: t('title'),
-  }
 }
 
 export default async function RootLayout({
