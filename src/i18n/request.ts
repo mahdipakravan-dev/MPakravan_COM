@@ -1,23 +1,22 @@
 import { getRequestConfig } from 'next-intl/server'
-import { defaultLocale, locales } from '../config'
-import { getUserLocale } from '../db'
+import { routing } from './routing'
 
 export default getRequestConfig(async ({ requestLocale }) => {
-  // Read from potential `[locale]` segment
+  // This typically corresponds to the `[locale]` segment
   let locale = await requestLocale
 
-  if (!locale) {
-    // The user is logged in
-    locale = await getUserLocale()
-  }
-
-  // Ensure that the incoming locale is valid
-  if (!locales.includes(locale as any)) {
-    locale = defaultLocale
+  // Ensure that the incoming `locale` is valid
+  if (!locale || !routing.locales.includes(locale as any)) {
+    locale = routing.defaultLocale
   }
 
   return {
     locale,
-    messages: (await import(`../../messages/${locale}.json`)).default,
+    messages: (
+      await (locale === 'en'
+        ? // When using Turbopack, this will enable HMR for `en`
+          import('../../messages/en.json')
+        : import(`../../messages/${locale}.json`))
+    ).default,
   }
 })

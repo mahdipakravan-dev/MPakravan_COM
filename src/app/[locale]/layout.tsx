@@ -43,6 +43,10 @@ export const metadata: Metadata = {
   description: 'Developer',
 }
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
 export default async function RootLayout({
   children,
   params: { locale },
@@ -51,11 +55,11 @@ export default async function RootLayout({
   params: any
 }>) {
   // Enable static rendering
-  setRequestLocale(locale)
 
   if (!routing.locales.includes(locale as 'en' | 'fa')) {
     locale = 'en'
   }
+  setRequestLocale(locale)
   const messages = await getMessages()
 
   return (
