@@ -1,82 +1,34 @@
-import type { Metadata } from 'next'
-import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, setRequestLocale } from 'next-intl/server'
-import { Orbitron } from 'next/font/google'
-import localFont from 'next/font/local'
-import { TailwindIndicator } from '../../components/tailwind-indicator'
-import { routing } from '../../i18n/routing'
-import '../globals.css'
+import { notFound } from 'next/navigation'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { ReactNode } from 'react'
+import BaseLayout from '@/components/base-layout'
+import { routing } from '@/i18n/routing'
 
-const orbitronFont = Orbitron({
-  variable: '--font-orbitron',
-  subsets: ['latin'],
-})
-
-const morabbaFont = localFont({
-  variable: '--font-morabba',
-  src: [
-    {
-      path: '../../fonts/morabba/fonts/woff2/Morabba-UltraLight.woff2',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../../fonts/morabba/fonts/woff2/Morabba-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../fonts/morabba/fonts/woff2/Morabba-Bold.woff2',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../fonts/morabba/fonts/woff2/Morabba-Heavy.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-})
-
-export const metadata: Metadata = {
-  title: 'Mahdi Pakravan',
-  description: 'Developer',
+type Props = {
+  children: ReactNode
+  params: any
 }
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
 
-export default async function RootLayout({
-  children,
-  params: { locale },
-}: Readonly<{
-  children: React.ReactNode
-  params: any
-}>) {
-  // Enable static rendering
+export async function generateMetadata({ params: { locale } }: Omit<Props, 'children'>) {
+  const t = await getTranslations({ locale, namespace: 'LocaleLayout' })
 
-  if (!routing.locales.includes(locale as 'en' | 'fa')) {
-    locale = 'en'
+  return {
+    title: t('title'),
   }
+}
+
+export default async function LocaleLayout({ children, params: { locale } }: Props) {
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale as any)) {
+    notFound()
+  }
+
+  // Enable static rendering
   setRequestLocale(locale)
 
-  const messages = await getMessages()
-
-  return (
-    <html dir={locale === 'fa' ? 'rtl' : 'ltr'}>
-      <body
-        className={
-          locale === 'fa'
-            ? `${morabbaFont.className} ${morabbaFont.variable}`
-            : ` ${orbitronFont.className} ${orbitronFont.variable} antialiased`
-        }
-      >
-        <NextIntlClientProvider messages={messages}>
-          {children}
-          <TailwindIndicator />
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  )
+  return <BaseLayout locale={locale}>{children}</BaseLayout>
 }
