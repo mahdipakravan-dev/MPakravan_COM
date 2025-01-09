@@ -37,9 +37,10 @@ export default function Page({ params: { locale } }: Props) {
           <div className="flex flex-col justify-center items-center relative  animate-fade-in">
             <h1 className="text-xl md:text-3xl font-bold mb-4 !text-center">
               {t('HomePageHero.hi')}
-              <span className="animate-pulse mx-3">{t('HomePageHero.name')}</span>
+              <span className="animate-pulse ">{t('HomePageHero.name')}</span>{' '}
+              {t('HomePageHero.finisher')}
             </h1>
-            <h2 className="text-[18px] !text-center sm:text-lg font-semibold text-primary mb-6">
+            <h2 className="text-[16px] !text-center sm:text-lg font-semibold text-primary mb-6">
               {t('HomePageHero.job')}
             </h2>
 

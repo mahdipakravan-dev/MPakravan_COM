@@ -98,7 +98,12 @@ body::before {
 
 #starry {
   animation: fade-in 1s ease-in;
-  clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+}
+
+@media screen and (min-width: 768px) {
+  #starry {
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+  }
 }
 
 @keyframes fade-in {

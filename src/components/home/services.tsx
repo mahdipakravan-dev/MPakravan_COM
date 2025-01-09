@@ -40,7 +40,7 @@ const Services = ({ t }: { t: Record<string, any> }) => {
 
   const GradientBox = (props: { title: string; description: string; icon: React.ReactNode }) => {
     return (
-      <div className="relative h-[min(380px)] w-full rounded-lg overflow-hidden fade-in">
+      <div className="relative w-full rounded-lg overflow-hidden fade-in">
         <div className="absolute inset-0 bg-shadow-gradient pointer-events-none"></div>
         <div className="relative z-10 p-4">
           {props.icon}

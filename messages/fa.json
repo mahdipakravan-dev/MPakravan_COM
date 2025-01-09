@@ -1,6 +1,6 @@
 {
   "LocaleLayout": {
-      "title": "مهدی پاکروان |‌توسعه دهنده وب/طراح وب"
+      "title": "مهدی پاکروان |‌ توسعه دهنده وب/طراح وب"
     },
   "config" : {
     "language": "fa",
@@ -8,8 +8,9 @@
   },
   "HomePageHero": {
     "hi": " سلام ",
-    "name": "مهدی پاکروان هستم !",
-    "job": "همراه شما برای ساخت تجربه‌هایی فراتر از انتظارات زمینی.",
+    "name": "مهدی پاکروان",
+    "finisher" : "هستم !",
+    "job": "منتور/توسعه دهنده و طراح وب",
     "description": "اگر در مسیر یادگیری توسعه وب هستید یا به دنبال طراحی سایت حرفه‌ای می‌گردید، من با طراحی نوآورانه، توسعه امن و منتورشیپ تخصصی در کنار شما هستم",
     "video" : "https://persian17.asset.aparat.com/aparat-video/c75a2385d3cb26aae174940b6d7a2da361268571-720p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjhhNzE4NGVlOTQ5YmNhOTFiOWZhMTQ5ZjQwNTFjNGVmIiwiZXhwIjoxNzMyODIzOTUzLCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.KJCf8zuvXfXCWbYpyoHTcdZwt_DYlbMnpkmwHrZkjXI"
   },
