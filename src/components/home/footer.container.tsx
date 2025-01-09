@@ -8,6 +8,7 @@ function FooterContainer() {
     col3Title: t('col3Title'),
     copyRight: t('copyRight'),
     description: t('description'),
+    version : t("version")
   }
   return <FooterSection t={translations} />
 }
