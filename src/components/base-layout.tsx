@@ -41,12 +41,10 @@ type Props = {
 }
 
 export default async function BaseLayout({ children, locale }: Props) {
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages()
 
   return (
-    <html className="h-full" lang={locale}>
+    <html className="h-full" dir={locale === 'en' ? 'ltr' : 'rtl'} lang={locale}>
       <body
         className={
           locale === 'fa'
