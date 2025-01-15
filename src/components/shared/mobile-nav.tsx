@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button'
 import { Icon } from '../icon'
 import useLang from '@/hooks/useLang'
 import { useRouter } from '@/i18n/routing'
+import { LanguagesIcon } from 'lucide-react'
 
 export const HeaderLinks = (t: Record<string, any>) => [
   {
@@ -73,7 +74,7 @@ const MobileNav = ({ translations }: { translations: Record<string, any> }) => {
         ))}
         <DropdownMenuItem key={'change_lang'} asChild>
           <Link href={lang === 'en' ? '/fa' : '/en'}>
-            <div>{lang === 'en' ? 'تغییر زبان' : 'Switch Language'}</div>
+            <div className='flex gap-2'><LanguagesIcon size={16}/>{lang === 'fa' ? 'تغییر زبان' : 'Switch Language'}</div>
           </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>

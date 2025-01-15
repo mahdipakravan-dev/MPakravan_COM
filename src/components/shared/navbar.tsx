@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils'
 import { Icons } from '@/components/icon'
 import useLang from '@/hooks/useLang'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
+import { LanguagesIcon } from 'lucide-react'
 
 export function Navbar(props: { translations: Record<string, string> }) {
   const lang = useLang()
@@ -113,7 +114,7 @@ export function Navbar(props: { translations: Record<string, string> }) {
         </li>
 
         <Popover>
-          <PopoverTrigger>{props.translations["language"]}</PopoverTrigger>
+          <PopoverTrigger><LanguagesIcon/></PopoverTrigger>
           <PopoverContent side="bottom" align="end" className="mt-4">
             <ul className="flex gap-y-2 flex-col justify-start" key={'navbar'}>
               <li className="hover:bg-primary transition-all duration-300 ease-in-out px-2 rounded-md">

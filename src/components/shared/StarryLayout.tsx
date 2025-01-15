@@ -52,7 +52,7 @@ const StarryBackground: FC<Props> = ({ children, rootClassName }) => {
       return stars
     }
 
-    let stars = createStars(w, h, 50)
+    let stars = createStars(w, h, 36)
 
     function render() {
       if (!ctx) return
