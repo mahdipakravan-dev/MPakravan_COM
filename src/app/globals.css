@@ -101,7 +101,7 @@ body::before {
 }
 
 @media screen and (min-width: 768px) {
-  #starry {
+  .clipped {
     clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
   }
 }

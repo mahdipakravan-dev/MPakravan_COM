@@ -1,14 +1,16 @@
 'use client'
 
+import clsx from 'clsx'
 import { cn, randomInt } from '../../lib/utils'
 import { FC, ReactNode, useEffect, useRef } from 'react'
 
 interface Props {
   children: ReactNode
   rootClassName?: string
+  clipped?: boolean
 }
 
-const StarryBackground: FC<Props> = ({ children, rootClassName }) => {
+const StarryBackground: FC<Props> = ({ children, rootClassName, clipped = true }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -85,7 +87,11 @@ const StarryBackground: FC<Props> = ({ children, rootClassName }) => {
 
   return (
     <div className={cn('relative starry-bg overflow-hidden', rootClassName)}>
-      <canvas className="absolute w-full h-full z-[0]" ref={canvasRef} id="starry" />
+      <canvas
+        className={clsx(clipped && 'clipped', 'absolute w-full h-full z-[0] ')}
+        ref={canvasRef}
+        id="starry"
+      />
       <div className="absolute z-[2] left-0 right-0 w-full h-full">{children}</div>
     </div>
   )
