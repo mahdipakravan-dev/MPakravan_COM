@@ -12,6 +12,8 @@ import Image from 'next/image'
 import { LogoEn, LogoFa } from '../../components/logo'
 import HeroSvgBorders from '@/components/home/svg-borders'
 import { setRequestLocale } from 'next-intl/server'
+import clsx from 'clsx'
+import Link from 'next/link'
 
 type Props = {
   params: any
@@ -22,10 +24,27 @@ export default function Page({ params: { locale } }: Props) {
   const lang = useLang()
   const t = useTranslations()
 
+  const hasBanner = true
+
   return (
     <>
-      <StarryBackground rootClassName="h-[80vh]">
-        <header className="absolute w-full top-4 md:top-12 z-[4] ">
+      {hasBanner && (
+        <Link
+          href={'https://b2n.ir/m08485'}
+          className={clsx(
+            'fixed cursor-pointer top-0 left-0 w-full h-24 z-[3] flex justify-center items-center overflow-hidden bg-black',
+          )}
+        >
+          <Image src={'/images/cover.png'} width={1024} height={200} alt="cover" />
+        </Link>
+      )}
+      <StarryBackground rootClassName={clsx('h-[90vh]', hasBanner && 'h-[100vh]')}>
+        <header
+          className={clsx(
+            'absolute w-full top-4 md:top-10 z-[4] ',
+            hasBanner && 'top-28 md:top-32',
+          )}
+        >
           <div className="container flex justify-between items-center ">
             {lang === 'en' ? <LogoEn /> : <LogoFa />}
 
@@ -50,7 +69,6 @@ export default function Page({ params: { locale } }: Props) {
           </div>
         </div>
       </StarryBackground>
-
       <div className="w-full flex justify-center items-center -translate-y-10 container relative z-[2]">
         <video
           className="rounded shadow-lg z-[0]"
