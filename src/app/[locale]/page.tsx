@@ -3,17 +3,16 @@ import FeedbacksContainer from '@/components/home/feedbacks.container'
 import FooterContainer from '@/components/home/footer.container'
 import PortfolioContainer from '@/components/home/portfolio.container'
 import ServicesContainer from '@/components/home/services.container'
-import { Icon } from '@/components/icon'
+import VideoPlayer from '@/components/home/video'
 import NavbarContainer from '@/components/shared/navbar.container'
 import StarryBackground from '@/components/shared/StarryLayout'
 import useLang from '@/hooks/useLang'
-import { useTranslations } from 'next-intl'
-import Image from 'next/image'
-import { LogoEn, LogoFa } from '../../components/logo'
-import HeroSvgBorders from '@/components/home/svg-borders'
-import { setRequestLocale } from 'next-intl/server'
 import clsx from 'clsx'
+import { useTranslations } from 'next-intl'
+import { setRequestLocale } from 'next-intl/server'
+import Image from 'next/image'
 import Link from 'next/link'
+import { LogoEn, LogoFa } from '../../components/logo'
 
 type Props = {
   params: any
@@ -69,29 +68,7 @@ export default function Page({ params: { locale } }: Props) {
           </div>
         </div>
       </StarryBackground>
-      <div className="w-full flex justify-center items-center -translate-y-10 container relative z-[2]">
-        <video
-          className="rounded shadow-lg z-[0]"
-          src={t('HomePageHero.video')}
-          poster="/images/movie-preview.png"
-          muted
-          autoPlay
-          width={'100%'}
-          height={300}
-        />
-        <div className="absolute left-0 top-0 z-[3] w-full h-full flex justify-center items-center">
-          <div className="rounded-full flex items-center justify-center bg-[rgba(0,0,0,0.6)] w-20 h-20 cursor-pointer">
-            <Icon name="play" />
-          </div>
-        </div>
-        <Image
-          src="/images/shallows/shallow-green.png"
-          alt="logo"
-          width={1500}
-          height={1000}
-          className="absolute animate-shallow z-[-1]"
-        />
-      </div>
+      <VideoPlayer />
 
       <ServicesContainer />
       <FeedbacksContainer />
