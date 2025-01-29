@@ -21,7 +21,7 @@ const VideoPlayer = () => {
   }
 
   return (
-    <div className="w-full flex justify-center items-center -translate-y-10 container relative z-[2]">
+    <div className="w-full flex justify-center items-center -translate-y-40 container relative z-[2] select-none">
       <video
         className="rounded shadow-lg z-[0]"
         src={'/movies/top-movie.mp4'}
@@ -31,7 +31,7 @@ const VideoPlayer = () => {
         height={300}
       />
       <div
-        className="absolute left-0 top-0 z-[3] w-full h-full flex justify-center items-center"
+        className="absolute left-0 top-0 z-[3] w-full h-full flex justify-center items-center select-none"
         onClick={() => toggleVideo()}
       >
         <div className="rounded-full flex items-center justify-center bg-[rgba(0,0,0,0.6)] w-20 h-20 cursor-pointer">
@@ -43,7 +43,7 @@ const VideoPlayer = () => {
         alt="logo"
         width={1500}
         height={1000}
-        className="absolute animate-shallow z-[-1]"
+        className="absolute animate-shallow z-[-1] select-none"
       />
     </div>
   )

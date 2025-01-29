@@ -86,9 +86,9 @@ const StarryBackground: FC<Props> = ({ children, rootClassName, clipped = true }
   }, [])
 
   return (
-    <div className={cn('relative starry-bg overflow-hidden', rootClassName)}>
+    <div className={cn('relative starry-bg overflow-hidden ', rootClassName)}>
       <canvas
-        className={clsx(clipped && 'clipped', 'absolute w-full h-full z-[0] ')}
+        className={clsx(clipped && 'clipped', 'absolute w-full h-full z-[0] select-none')}
         ref={canvasRef}
         id="starry"
       />

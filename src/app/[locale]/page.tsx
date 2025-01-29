@@ -23,7 +23,7 @@ export default function Page({ params: { locale } }: Props) {
   const lang = useLang()
   const t = useTranslations()
 
-  const hasBanner = true
+  const hasBanner = false
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function Page({ params: { locale } }: Props) {
           <Image src={'/images/cover.png'} width={1024} height={200} alt="cover" />
         </Link>
       )}
-      <StarryBackground rootClassName={clsx('h-[90vh]', hasBanner && 'h-[100vh]')}>
+      <StarryBackground rootClassName={clsx('h-[90vh] md:h-[80vh]', hasBanner && 'h-[80vh]')}>
         <header
           className={clsx(
             'absolute w-full top-4 md:top-10 z-[4] ',

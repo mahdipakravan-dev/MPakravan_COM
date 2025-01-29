@@ -91,7 +91,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(26, 27, 30, 0.9);
+  background: rgba(26, 27, 30, 0.94);
   pointer-events: none; /* Ensure it doesn't interfere with interactions */
   z-index: -1;
 }

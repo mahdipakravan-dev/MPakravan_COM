@@ -7,7 +7,7 @@ async function PortfolioContainer() {
       next: {
         revalidate: 10,
       },
-      cache: process.env.NODE_ENV === 'development' ? 'no-store' : 'force-cache',
+      cache: 'force-cache',
     },
   )
   const resp = await res.json()
