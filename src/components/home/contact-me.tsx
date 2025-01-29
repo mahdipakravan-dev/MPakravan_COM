@@ -86,11 +86,11 @@ const ContactMeSection = () => {
 
       const inputs = {
         name: (e.currentTarget.name as any)?.value,
-        email: (e.currentTarget.phone as any)?.value,
+        emailOrPhone: (e.currentTarget.emailOrPhone as any)?.value,
         message: (e.currentTarget.message as any)?.value,
       }
 
-      if (!inputs.name || !inputs.email || !inputs.message) {
+      if (!inputs.name || !inputs.emailOrPhone || !inputs.message) {
         setIsLoading(false)
         return
       }
@@ -134,10 +134,10 @@ const ContactMeSection = () => {
               name="name"
             />
             <CustomInput
-              label={t('phoneNumber')}
+              label={t('emailOrPhone')}
               placeholder={t('placeholderPhone')}
               type="text"
-              name="phone"
+              name="emailOrPhone"
             />
             <CustomInput
               label={t('message')}

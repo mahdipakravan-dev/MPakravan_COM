@@ -92,7 +92,7 @@ const Services = () => {
             variant="outlinePrimary"
             className="mt-2 w-full rtl:text-lg"
           >
-            {t['button']}
+            {t('button')}
           </Button>
         </div>
         <div className="w-full md:w-3/5 mt-4 lg:mt-0 lg:mx-8 h-full flex flex-col lg:flex-row justify-evenly gap-4">

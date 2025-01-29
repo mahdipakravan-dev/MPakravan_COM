@@ -53,9 +53,10 @@
   body {
     @apply text-foreground overflow-x-hidden;
     font-family: var(--font-family);
-    background-image: url('/images/starry-bg.jpg');
+    background-color: #1a1b1e;
+    /* background-image: url('/images/starry-bg.jpg');
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; */
   }
 }
 
@@ -85,7 +86,7 @@ input:focus-visible {
 }
 
 body::before {
-  content: '';
+  /* content: ''; */
   position: fixed;
   top: 0;
   left: 0;

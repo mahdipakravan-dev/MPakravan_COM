@@ -81,22 +81,6 @@ export function Navbar(props: { translations: Record<string, string> }) {
           </Link>
         </li>
 
-        <li key="blog">
-          <Link
-            href={'#blog'}
-            legacyBehavior
-            onClick={() => {
-              const services = document.getElementById('blog')
-              if (services) {
-                services.scrollIntoView({ behavior: 'smooth' })
-              }
-            }}
-            passHref
-          >
-            {props.translations['blog']}
-          </Link>
-        </li>
-
         <li key="contact">
           <Link
             href={'#contact'}
@@ -114,7 +98,9 @@ export function Navbar(props: { translations: Record<string, string> }) {
         </li>
 
         <Popover>
-          <PopoverTrigger><LanguagesIcon/></PopoverTrigger>
+          <PopoverTrigger>
+            <LanguagesIcon />
+          </PopoverTrigger>
           <PopoverContent side="bottom" align="end" className="mt-4">
             <ul className="flex gap-y-2 flex-col justify-start" key={'navbar'}>
               <li className="hover:bg-primary transition-all duration-300 ease-in-out px-2 rounded-md">
