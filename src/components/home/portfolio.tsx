@@ -9,6 +9,8 @@ import { useTranslations } from 'next-intl'
 import { cn, makeImageUrl } from '@/lib/utils'
 import useLang from '@/hooks/useLang'
 import Link from 'next/link'
+import { Dialog, DialogContent, DialogDescription, DialogTitle , DialogHeader } from '../ui/dialog'
+import clsx from 'clsx'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -41,6 +43,15 @@ const PortfolioSection = ({ portfolios }: Props) => {
     if (filter === 'all') return true
     return portfolio.stack.includes(filter)
   })
+
+  const [selectedPortfolio, setSelectedPortfolio] = useState<Props['portfolios'][number] | null>(null)
+
+  const onClickPortfolio = (portfolio: Props['portfolios'][number]) => {
+    setSelectedPortfolio(portfolio)
+  }
+  const closeModal = () => {
+    setSelectedPortfolio(null)
+  }
 
   useEffect(() => {
     const section = sectionRef.current
@@ -113,11 +124,10 @@ const PortfolioSection = ({ portfolios }: Props) => {
       <div className="mt-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8">
           {filteredPortfolios.map((portfolio, index) => (
-            <Link
+            <div
               key={`po_${portfolio.id}`}
-              href={portfolio.url || '#'}
-              target="_blank"
               rel="noopener noreferrer"
+              onClick={() => onClickPortfolio(portfolio)}
             >
               <div className="relative w-full min-w-[200px] overflow-hidden rounded-md shadow-lg project-card group transform transition-transform duration-300 hover:scale-105">
                 <Image
@@ -144,29 +154,28 @@ const PortfolioSection = ({ portfolios }: Props) => {
                   <p className="text-white text-lg font-semibold tracking-wide text-center px-4">
                     {lang === 'en' ? portfolio.nameEn : portfolio.name}
                   </p>
-
-                  <div
-                    className={cn(
-                      'text-center space-y-2 opacity-0 group-hover:opacity-100 transition-all duration-75',
-                      'absolute bottom-2 left-10',
-                    )}
-                  >
-                    <p className="text-xs">
-                      <span className="font-semibold">Employer:</span> {portfolio.employer || 'N/A'}
-                    </p>
-                    {portfolio.url && (
-                      <p className="text-xs">
-                        <span className="font-semibold">URL:</span>{' '}
-                        <span className="text-blue-200 hover:underline">Visit</span>
-                      </p>
-                    )}
-                  </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
+
+      <Dialog open={selectedPortfolio !== null} onOpenChange={(open) => setSelectedPortfolio(prev => open ? prev : null)}>
+        <DialogContent className='h-[90vh] overflow-scroll'>
+          <DialogHeader>
+            <DialogTitle className='my-6'>{lang === "en" ? selectedPortfolio?.nameEn : selectedPortfolio?.name}</DialogTitle>
+            <DialogDescription className={clsx(
+              'leading-10 text-white',
+              lang === "fa" && "text-md"
+            )} dangerouslySetInnerHTML={{
+              __html : lang === "en" ? selectedPortfolio?.enDescription : selectedPortfolio?.description
+            }}>
+            </DialogDescription>
+          </DialogHeader>
+          </DialogContent>
+        </Dialog>
+
     </section>
   )
 }

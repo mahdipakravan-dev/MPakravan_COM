@@ -25,25 +25,39 @@
       "language" : "Language"
     },
     "services": {
-      "heading": "What do I do?",
-      "description": "With over 6 years of experience in frontend development, I've completed more than 20 projects for clients in Iran, Kuwait, the USA, and other countries.",
+      "heading": "My Services",
+      "description": "I believe it's my duty to share my knowledge and experience in the web development journey with you. In this section, I offer services for those passionate about this field. You can also download my resume below to learn more about me.",
       "button": "Download Resume",
+      "investment": "Investment Amount:",
+      "take": "Get",
       "websiteDevelopment": {
-        "title": "Website Development",
-        "description": "Building and maintaining websites and web applications using technologies like HTML, CSS, and JavaScript."
-      },
-      "websiteDesign": {
-        "title": "Website Design",
-        "description": "Creating the visual appearance and layout of websites and web applications."
-      },
-      "websiteSecurity": {
-        "title": "Website Security",
-        "description": "Ensuring the security of websites and web applications by implementing security measures such as encryption and authentication."
-      },
-      "websiteMentorship": {
-        "title": "Website Mentorship",
-        "description": "Providing guidance and advice to individuals and teams on website development and design."
-      }
+    "title": "Web Development Training",
+    "description": "If you’d like a private tutor to learn web development, I can help you. Just send me a message on Telegram, and we can discuss your learning path.",
+    "price": "Contact for details",
+    "time": "2-hour private session",
+    "link": "https://t.me/mahdipakravan"
+  },
+    "websiteDesign": {
+      "title": "Instant Debugging / Quick Consultation",
+      "description": "For times when you encounter an issue in your project and need immediate assistance, you can reach out to me to resolve the problem quickly.",
+      "price": "500,000 Toman",
+      "time": "30-minute private session",
+      "link": "https://zarinp.al/673929"
+    },
+    "websiteSecurity": {
+      "title": "Project Development",
+      "description": "If you have a project, you can count on me! I can assist with all phases of development, including design, coding, maintenance, and security. Just click the button below.",
+      "price": "200,000 Toman",
+      "time": "30-minute private session",
+      "link": "https://t.me/mahdipakravan"
+    },
+    "websiteMentorship": {
+      "title": "Mentorship",
+      "description": "In this mentorship program, you can ask anything you’d like—whether it's about your current company, your career path, resume reviews, or mock interviews. Just click the link on the website.",
+      "time": "30-minute private session",
+      "price": "Free",
+      "link": "https://adplist.org/mentors/mahdi-pakravan"
+    }
     },
     "FeedbacksSection": {
       "title": "Feedbacks",
@@ -85,6 +99,6 @@
       "col2Title" : "Services",
       "col3Title" : "Quick Links",
       "copyRight" : "Design + Development + Security with ❤ by Mpakravan",
-      "version" : "Version 1.4.0"
+      "version" : "Version 1.6.0"
     }
   }

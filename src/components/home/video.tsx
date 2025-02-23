@@ -46,13 +46,6 @@ const VideoPlayer = () => {
           {playing ? <Icon name="pause" /> : <Icon name="play" />}
         </div>
       </div>
-      <Image
-        src="/images/shallows/shallow-green.png"
-        alt="logo"
-        width={1500}
-        height={1000}
-        className="absolute animate-shallow z-[-1] select-none"
-      />
     </div>
   )
 }

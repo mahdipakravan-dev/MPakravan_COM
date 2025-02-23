@@ -58,18 +58,18 @@ const Services = () => {
             {props.description}
           </p>
 
-          <div className="mt-8 mb-4 text-lg">
+          {/* <div className="mt-8 mb-4 text-lg">
             <span className="text-sm">{t('investment')}</span> <b className="mx-2">{props.price}</b>
-          </div>
+          </div> */}
 
           <Button
             variant="outlinePrimary"
-            className="w-full"
+            className="w-full mt-4"
             onClick={() => {
               window.open(props.link, '_blank')
             }}
           >
-            دریافت
+            {t('take')}
           </Button>
         </div>
       </div>
@@ -90,7 +90,7 @@ const Services = () => {
               window.open('/docs/cv.pdf', '_blank')
             }}
             variant="outlinePrimary"
-            className="mt-2 w-full rtl:text-lg"
+            className="mt-2 w-full rtl:text-lg z-[9999]"
           >
             {t('button')}
           </Button>
