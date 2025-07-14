@@ -3,7 +3,8 @@ import FeedbacksContainer from '@/components/home/feedbacks.container'
 import FooterContainer from '@/components/home/footer.container'
 import PortfolioContainer from '@/components/home/portfolio.container'
 import ServicesContainer from '@/components/home/services.container'
-import VideoPlayer from '@/components/home/video'
+import ShowcaseSection from '@/components/home/showcase.section'
+import CareerContainer from '@/components/home/career.container'
 import NavbarContainer from '@/components/shared/navbar.container'
 import StarryBackground from '@/components/shared/StarryLayout'
 import useLang from '@/hooks/useLang'
@@ -13,6 +14,8 @@ import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { LogoEn, LogoFa } from '../../components/logo'
+import LoadingAnimation from '@/components/shared/loading-animation'
+import VideoPlayer from '@/components/home/video'
 
 type Props = {
   params: any
@@ -37,6 +40,7 @@ export default function Page({ params: { locale } }: Props) {
           <Image src={'/images/cover.png'} width={1024} height={200} alt="cover" />
         </Link>
       )}
+      <LoadingAnimation />
       <StarryBackground rootClassName={clsx('h-[90vh] md:h-[80vh]', hasBanner && 'h-[80vh]')}>
         <header
           className={clsx(
@@ -72,6 +76,7 @@ export default function Page({ params: { locale } }: Props) {
 
       <ServicesContainer />
       <FeedbacksContainer />
+      <CareerContainer />
       <PortfolioContainer />
       <ContactMeContainer />
       <FooterContainer />

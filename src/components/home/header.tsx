@@ -5,12 +5,15 @@ import NavbarContainer from '../shared/navbar.container'
 import Image from 'next/image'
 import { Icon } from '../icon'
 import { useTranslations } from 'next-intl'
+import LoadingAnimation from '../shared/loading-animation'
 
 function Header() {
   const lang = useLang()
   const t = useTranslations('HomePageHero')
   return (
     <>
+      <LoadingAnimation />
+
       <StarryBackground rootClassName="h-[80vh]">
         <header className="absolute w-full top-4 md:top-12 z-[4] ">
           <div className="container flex justify-between items-center ">
