@@ -4,7 +4,6 @@ import FooterContainer from '@/components/home/footer.container'
 import PortfolioContainer from '@/components/home/portfolio.container'
 import ServicesContainer from '@/components/home/services.container'
 import ShowcaseSection from '@/components/home/showcase.section'
-import CareerContainer from '@/components/home/career.container'
 import NavbarContainer from '@/components/shared/navbar.container'
 import StarryBackground from '@/components/shared/StarryLayout'
 import useLang from '@/hooks/useLang'
@@ -76,7 +75,6 @@ export default function Page({ params: { locale } }: Props) {
 
       <ServicesContainer />
       <FeedbacksContainer />
-      <CareerContainer />
       <PortfolioContainer />
       <ContactMeContainer />
       <FooterContainer />
