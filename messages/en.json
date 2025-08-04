@@ -112,12 +112,71 @@
       "github": "Github",
       "loading" : "Loading..."
     },
-    "CareerSection": {
-      "title": "Career Journey",
-      "description": "Explore my professional journey and experience in the world of web development.",
-      "viewMore": "View More"
-    },
-    "FooterSection": {
+      "CareerSection": {
+    "title": "Career Journey",
+    "description": "Explore my professional journey and experience in the world of web development.",
+    "viewMore": "View More"
+  },
+  "AIBlogSection": {
+    "title": "Machine Learning from My Perspective",
+    "description": "Explore the latest insights, tutorials, and discoveries in artificial intelligence",
+    "readMore": "Read More",
+    "stayUpdated": "Stay Updated",
+    "stayUpdatedDescription": "Get the latest AI insights delivered to your inbox",
+    "blogPosts": {
+      "svmModel": {
+        "title": "Machine Learning from My Perspective (Step 16 - SVM Model)",
+        "description": "In this exercise, we will learn what the SVM (Support Vector Machine) model is, how and where to use it, and also hyperparameters.",
+        "category": "Machine Learning"
+      },
+      "logisticRegression": {
+        "title": "Machine Learning Made Simple (Step 15 - Logistic Regression Model)",
+        "description": "In this exercise, we will learn what Logistic Regression is, how it works, where to use it, and also hyperparameters.",
+        "category": "Machine Learning"
+      },
+      "imbalancedData": {
+        "title": "Machine Learning from My Perspective (Step 14 - Imbalanced Data)",
+        "description": "In this step, we handle imbalanced data that we have for regression or classification.",
+        "category": "Data Science"
+      },
+      "classification": {
+        "title": "Machine Learning from My Perspective (Step 13 - Classification)",
+        "description": "In this article, we get familiar with the concept of classification and build a test model to check if emails are spam or not.",
+        "category": "Machine Learning"
+      },
+      "californiaHousing": {
+        "title": "Machine Learning Made Simple (Step 12 - California Housing Project)",
+        "description": "In this article, we perform all Data Preparation steps on the California housing dataset and finally predict with linear regression model.",
+        "category": "Projects"
+      },
+      "featureSelection": {
+        "title": "Machine Learning Made Simple (Step 10 - Feature Selection)",
+        "description": "In this section, we learn exactly which features to select and which ones to remove to achieve our desired result.",
+        "category": "Data Science"
+      },
+      "featureScaling": {
+        "title": "Machine Learning from My Perspective (Step 9 - Feature Scaling)",
+        "description": "In this section of the articles, we bring our features to a suitable numerical range to get closer to the final preprocessing stages.",
+        "category": "Data Science"
+      },
+      "featureEngineering": {
+        "title": "Machine Learning Made Simple (Step 8 - Feature Engineering)",
+        "description": "In this section, we engineer the features of our dataset and prepare it for machine learning.",
+        "category": "Data Science"
+      },
+      "gradientDescent": {
+        "title": "Machine Learning from My Perspective (Step 7 - Gradient Descent)",
+        "description": "What exactly is gradient descent and how is it implemented, simple explanation with image and code.",
+        "category": "Machine Learning"
+      },
+      "regression": {
+        "title": "Machine Learning from My Perspective (Step 6 - Regression)",
+        "description": "In this step, by drawing regression, we learn to visualize the relationship between our data and make our first predictions.",
+        "category": "Machine Learning"
+      }
+    }
+  },
+  "FooterSection": {
       "description": "Focusing on the discipline, colors, and emotions of your brand, I create solutions that not only reflect your values but also provide an unforgettable experience for users, whether it's web development or AI implementation.",
       "col2Title" : "Services",
       "col3Title" : "Quick Links",

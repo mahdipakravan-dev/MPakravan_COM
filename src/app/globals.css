@@ -60,6 +60,49 @@
   }
 }
 
+/* AI Blog Page Animations */
+@layer components {
+  .blog-card-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+  
+  .blog-card-hover:hover {
+    @apply transform -translate-y-2;
+  }
+  
+  .image-scale-hover {
+    @apply transition-transform duration-700 ease-out;
+  }
+  
+  .image-scale-hover:hover {
+    @apply transform scale-110;
+  }
+  
+  .text-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .glow-effect {
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-700 blur-xl;
+    background: linear-gradient(45deg, transparent, rgba(45, 107, 79, 0.1), transparent);
+  }
+  
+  .glow-effect:hover {
+    @apply opacity-100;
+  }
+  
+  .slide-in-arrow {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .slide-in-arrow:hover {
+    @apply transform translate-x-1;
+  }
+}
+
 input:focus-visible {
   outline: none;
   --tw-ring-offset-width: 0;
