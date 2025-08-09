@@ -40,7 +40,7 @@ export default function Page({ params: { locale } }: Props) {
         </Link>
       )}
       {/* <LoadingAnimation /> */}
-      <ParallaxHero rootClassName={clsx('h-[90vh] md:h-[100vh]', hasBanner && 'h-[80vh]')} variant="geometric">
+      <ParallaxHero rootClassName={clsx('h-[90vh] md:h-[100vh]', hasBanner && 'h-[80vh]')} variant="lines">
         <header
           className={clsx(
             'absolute w-full top-4 md:top-10 z-[4] ',

@@ -27,7 +27,7 @@
     --secondary: #4a6b5d;
     --secondary-foreground: 240 5.9% 10%;
     /* Background colors with slight green tint */
-    --background: #212b24;
+    --background: #0f1814;
     --background-secondary: #1e2421;
     --foreground: #f2f2f2;
     /* Card colors with green undertones */
@@ -64,7 +64,7 @@
   body {
     @apply text-foreground overflow-x-hidden;
     font-family: var(--font-family);
-    background-color: #1a1b1e;
+    background-color: var(--background);
     /* background-image: url('/images/starry-bg.jpg');
     background-attachment: fixed;
     background-size: cover; */
@@ -137,18 +137,6 @@ input:focus-visible {
 ::-webkit-scrollbar-thumb:hover {
   background: #4a8b6f;
   opacity: 1;
-}
-
-body::before {
-  /* content: ''; */
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(26, 27, 30, 0.94);
-  pointer-events: none; /* Ensure it doesn't interfere with interactions */
-  z-index: -1;
 }
 
 
@@ -333,13 +321,13 @@ pre.shiki .highlighted {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
 }
 @keyframes baseDrift {
-  /* 0% { transform: translate3d(0,0,0) }
+  0% { transform: translate3d(0,0,0) }
   50% { transform: translate3d(-2%, -1%, 0) }
-  100% { transform: translate3d(0,0,0) } */
+  100% { transform: translate3d(0,0,0) }
 }
 @keyframes gridPan {
   0% { transform: translate3d(0,0,0) }

@@ -22,7 +22,7 @@ interface Props {
   variant?: 'aurora' | 'mesh' | 'lines'
 }
 
-const PRIMARY = '#2b654d'
+const PRIMARY = '#142a20'
 
 export default function ParallaxHero({ children, rootClassName, variant = 'aurora' }: Props) {
   const baseGradient = (() => {
@@ -33,7 +33,7 @@ export default function ParallaxHero({ children, rootClassName, variant = 'auror
     }
     if (variant === 'lines') {
       return `linear-gradient(135deg, #0f1613 0%, #0a130f 50%, #0d1813 100%),
-              repeating-linear-gradient(135deg, ${PRIMARY}14 0px, ${PRIMARY}14 2px, transparent 2px, transparent 14px)`
+              repeating-linear-gradient(135deg, ${PRIMARY}14 0px, ${PRIMARY}14 2px, transparent 2px, transparent 0px)`
     }
     // Default: aurora base
     return `linear-gradient(135deg, #0d1612 0%, #0a120f 45%, #0e1a15 100%)`
