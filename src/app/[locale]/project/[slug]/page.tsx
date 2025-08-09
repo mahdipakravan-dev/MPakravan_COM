@@ -1,6 +1,6 @@
 import { LogoEn, LogoFa } from '@/components/logo'
 import NavbarContainer from '@/components/shared/navbar.container'
-import StarryBackground from '@/components/shared/StarryLayout'
+import ParallaxHero from '@/components/shared/ParallaxHero'
 import useLang from '@/hooks/useLang'
 import { ChevronDownIcon, ChevronLeft, PenIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -32,7 +32,7 @@ export default function Page({ params: { locale } }: Props) {
 
   return (
     <>
-      <StarryBackground clipped={false} rootClassName="h-[160vh]">
+      <ParallaxHero rootClassName="h-[160vh]" variant="minimal">
         <header className="absolute w-full top-4 md:top-12 z-[4] ">
           <div className="container flex justify-between items-center ">
             {lang === 'en' ? <LogoEn /> : <LogoFa />}
@@ -40,7 +40,7 @@ export default function Page({ params: { locale } }: Props) {
             <NavbarContainer />
           </div>
         </header>
-      </StarryBackground>
+      </ParallaxHero>
 
       <div className="container relative -translate-y-[140vh]">
         <Breadcrumb className="pb-4 px-4">
@@ -95,7 +95,7 @@ export default function Page({ params: { locale } }: Props) {
           </div>
           <div className="w-2/3">
             <section
-              className="w-full bg-[rgba(110,125,135,0.1)] relative p-4 rounded-md"
+              className="w-full bg-card/30 relative p-4 rounded-md"
               id="feedback"
             >
               <p className="leading-8">

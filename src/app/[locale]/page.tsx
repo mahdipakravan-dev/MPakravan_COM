@@ -5,7 +5,7 @@ import PortfolioContainer from '@/components/home/portfolio.container'
 import ServicesContainer from '@/components/home/services.container'
 import ShowcaseSection from '@/components/home/showcase.section'
 import NavbarContainer from '@/components/shared/navbar.container'
-import StarryBackground from '@/components/shared/StarryLayout'
+import ParallaxHero from '@/components/shared/ParallaxHero'
 import useLang from '@/hooks/useLang'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
@@ -39,8 +39,8 @@ export default function Page({ params: { locale } }: Props) {
           <Image src={'/images/cover.png'} width={1024} height={200} alt="cover" />
         </Link>
       )}
-      <LoadingAnimation />
-      <StarryBackground rootClassName={clsx('h-[90vh] md:h-[80vh]', hasBanner && 'h-[80vh]')}>
+      {/* <LoadingAnimation /> */}
+      <ParallaxHero rootClassName={clsx('h-[90vh] md:h-[100vh]', hasBanner && 'h-[80vh]')} variant="geometric">
         <header
           className={clsx(
             'absolute w-full top-4 md:top-10 z-[4] ',
@@ -56,12 +56,11 @@ export default function Page({ params: { locale } }: Props) {
 
         <div className="h-full flex flex-col md:flex-row justify-center items-center container   relative">
           <div className="flex flex-col justify-center items-center relative  animate-fade-in">
-            <h1 className="text-xl md:text-3xl font-bold mb-4 !text-center">
+            <h1 className="text-xl md:text-4xl font-bold mb-4 !text-center">
               {t('HomePageHero.hi')}
-              <span className="animate-pulse ">{t('HomePageHero.name')}</span>{' '}
-              {t('HomePageHero.finisher')}
+              <span className="animate-pulse mx-3">{t('HomePageHero.name')}</span>
             </h1>
-            <h2 className="text-[16px] !text-center sm:text-lg font-semibold text-primary mb-6">
+            <h2 className="text-xl !text-center sm:text-lg font-semibold text-primary mb-6">
               {t('HomePageHero.job')}
             </h2>
 
@@ -70,7 +69,7 @@ export default function Page({ params: { locale } }: Props) {
             </p>
           </div>
         </div>
-      </StarryBackground>
+      </ParallaxHero>
       <VideoPlayer />
 
       <ServicesContainer />

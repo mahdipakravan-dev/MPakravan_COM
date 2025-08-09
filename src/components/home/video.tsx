@@ -1,21 +1,24 @@
 'use client'
 
 import Image from 'next/image'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Icon } from '../icon'
 
 const VideoPlayer = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [playing, setPlaying] = useState(false)
-  const [videoLoaded, setVideoLoaded] = useState(false)
+  const [playing, setPlaying] = useState(true) // default to playing
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.src = '/movies/top-movie.mp4'
+      videoRef.current.play().catch((err) => {
+        console.warn('Autoplay blocked:', err)
+      })
+    }
+  }, [])
 
   const toggleVideo = () => {
     if (videoRef.current) {
-      if (!videoLoaded) {
-        // Set the video source only when user clicks play
-        videoRef.current.src = '/movies/top-movie.mp4'
-        setVideoLoaded(true)
-      }
       if (playing) {
         videoRef.current.pause()
         setPlaying(false)
@@ -34,9 +37,13 @@ const VideoPlayer = () => {
         ref={videoRef}
         width={'100%'}
         height={300}
-        preload="none" // Prevents any preloading
+        preload="auto"
         onWaiting={() => console.log('Buffering...')}
         onCanPlay={() => console.log('Loaded...')}
+        autoPlay
+        muted
+        playsInline
+        loop
       />
       <div
         className="absolute left-0 top-0 z-[3] w-full h-full flex justify-center items-center select-none"

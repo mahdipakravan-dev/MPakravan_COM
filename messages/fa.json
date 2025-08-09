@@ -96,6 +96,7 @@
   },
   "ContactMeSection" : {
     "contactMeTitleWhite": "تماس",
+    "emailOrPhone" : "ایمیل / شماره تماس",
     "contactMeTitleGreen": "با من",
     "contactUs": "تماس با ما",
     "developDream": "بیایید رویای شما را بسازیم!",

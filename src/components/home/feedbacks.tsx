@@ -51,7 +51,7 @@ function FeedbacksSection(props: Props) {
 
   return (
     <section
-      className="w-full mt-12 bg-[rgba(110,125,135,0.1)] h-[750px] md:h-[460px] mb-[120px] relative"
+              className="w-full mt-12 bg-card/30 h-[750px] md:h-[460px] mb-[120px] relative"
       id="feedback"
     >
       <div className="container flex flex-col md:flex-row justify-between items-center h-full">
@@ -71,7 +71,7 @@ function FeedbacksSection(props: Props) {
               {props.feedbacks.map((feedback, index) => (
                 <div
                   key={`fe_${feedback.id}`}
-                  className="min-w-[300px] relative py-4 border border-[#6e7d8752] px-4 feedback-round"
+                  className="min-w-[300px] relative py-4 border border-primary/20 px-4 feedback-round"
                 >
                   <div className="absolute inset-0 bg-shadow-gradient pointer-events-none feedback-round"></div>
                   <Image
@@ -90,13 +90,13 @@ function FeedbacksSection(props: Props) {
                   />
                   <div className="flex mt-2 justify-start items-start">
                     <div className="flex flex-col justify-start">
-                      <span className="text-md font-bold block text-white">
+                      <span className="text-md font-bold block text-foreground">
                         {lang === 'en' ? feedback.enName : feedback.name}
                       </span>
-                      <span className="text-sm text-secondary">
+                      <span className="text-sm text-muted-foreground">
                         {lang === 'en' ? feedback.enPosition : feedback.position}
                       </span>
-                      <span className="text-xs text-secondary">
+                      <span className="text-xs text-muted-foreground">
                         {lang === 'en' ? feedback.enCompany : feedback.company}
                       </span>
                     </div>

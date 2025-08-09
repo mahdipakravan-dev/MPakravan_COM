@@ -1,11 +1,11 @@
 import useLang from '@/hooks/useLang'
-import StarryBackground from '../shared/StarryLayout'
 import { LogoEn, LogoFa } from '../logo'
 import NavbarContainer from '../shared/navbar.container'
 import Image from 'next/image'
 import { Icon } from '../icon'
 import { useTranslations } from 'next-intl'
 import LoadingAnimation from '../shared/loading-animation'
+import ParallaxHero from '../shared/ParallaxHero'
 
 function Header() {
   const lang = useLang()
@@ -14,7 +14,7 @@ function Header() {
     <>
       <LoadingAnimation />
 
-      <StarryBackground rootClassName="h-[80vh]">
+      <ParallaxHero rootClassName="h-[80vh]" variant="default">
         <header className="absolute w-full top-4 md:top-12 z-[4] ">
           <div className="container flex justify-between items-center ">
             {lang === 'en' ? <LogoEn /> : <LogoFa />}
@@ -38,7 +38,7 @@ function Header() {
             </p>
           </div>
         </div>
-      </StarryBackground>
+      </ParallaxHero>
 
       <div className="w-full flex justify-center items-center -translate-y-10 container relative z-[2]">
         <video

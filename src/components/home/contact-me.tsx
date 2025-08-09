@@ -122,7 +122,7 @@ const ContactMeSection = () => {
 
       <div className="flex flex-col lg:flex-row h-auto  mt-4">
         {/* Contact Form Section */}
-        <div className="w-full lg:w-2/5 bg-[rgba(110,125,135,.1)] rounded-tl-md rounded-bl-md p-6">
+                    <div className="w-full lg:w-2/5 bg-card/30 rounded-tl-md rounded-bl-md p-6">
           <span className="text-md block opacity-80">{t('contactUs')}</span>
           <span className="text-2xl font-bold block mt-3">{t('developDream')}</span>
 
