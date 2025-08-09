@@ -66,8 +66,8 @@ const ContactMeSection = () => {
             duration: 1,
             scrollTrigger: {
               trigger: el,
-              start: 'top 80%', // Animation starts when the top of the element is at 80% of the viewport height
-              toggleActions: 'play none none none', // Play animation once
+              start: 'top 80%',
+              toggleActions: 'play none none none',
             },
           },
         )
@@ -75,7 +75,7 @@ const ContactMeSection = () => {
     }, containerRef)
 
     return () => {
-      context.revert() // Clean up animations on component unmount
+      context.revert()
     }
   }, [])
 
@@ -102,8 +102,7 @@ const ContactMeSection = () => {
           'Content-Type': 'application/json',
         },
       })
-      const resp = await res.json()
-      console.log(resp)
+      await res.json()
       setIsLoading(false)
       setIsSuccess(true)
     } catch (error) {
@@ -114,15 +113,44 @@ const ContactMeSection = () => {
   }
 
   return (
-    <section className="container mt-24 mb-12" id="contact">
-      <h2 className="text-left text-[36px] font-bold">
+    <section
+      ref={containerRef}
+      id="contact"
+      className="mt-24 mb-12 relative overflow-hidden py-12"
+      style={{ backgroundColor: '#142a20', borderRadius: 8 }}
+    >
+      <div className="container">
+        {/* --- Lines background layer (مثل ParallaxHero: variant 'lines') --- */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none animate-grid-pan opacity-30 -z-10"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(43,101,77,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(43,101,77,0.08) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+        }}
+      />
+      {/* هاله‌ی ملایم برای عمق */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none -z-10"
+        style={{
+          background:
+            'radial-gradient(800px 540px at 8% 20%, rgba(43,101,77,0.12), transparent 60%), radial-gradient(680px 480px at 92% 80%, rgba(43,101,77,0.08), transparent 55%)',
+          mixBlendMode: 'screen',
+        }}
+      />
+      {/* فید پایین برای یک‌دستی با بدنه */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#142a20] via-[#142a20]/80 to-transparent pointer-events-none -z-10" />
+
+      <h2 className="text-left text-[36px] font-bold relative z-10">
         <span className="text-primary">{t('contactMeTitleWhite')} </span>
         {t('contactMeTitleGreen')}
       </h2>
 
-      <div className="flex flex-col lg:flex-row h-auto  mt-4">
+      <div className="flex flex-col lg:flex-row h-auto mt-4 relative z-10">
         {/* Contact Form Section */}
-                    <div className="w-full lg:w-2/5 bg-card/30 rounded-tl-md rounded-bl-md p-6">
+        <div className="w-full lg:w-2/5 bg-card/30 rounded-tl-md rounded-bl-md p-6 backdrop-blur-[0.5px]">
           <span className="text-md block opacity-80">{t('contactUs')}</span>
           <span className="text-2xl font-bold block mt-3">{t('developDream')}</span>
 
@@ -147,7 +175,7 @@ const ContactMeSection = () => {
               textArea
             />
             {isSuccess && (
-              <span className="text-primary font-semibold fade-in-10">
+              <span className="text-primary font-semibold fade-in">
                 Your Message has Successfully sent to me !
               </span>
             )}
@@ -159,12 +187,10 @@ const ContactMeSection = () => {
 
         {/* Contact Information Section */}
         <div className="hidden lg:flex w-full lg:w-3/5 relative flex-col justify-center items-center">
-          <Image src="/images/contact-bg.png" fill alt={'ALT'} className="block" />
-
+          <Image src="/images/contact-bg.png" fill alt="ALT" className="block" />
           <p className="text-md rtl:text-lg rtl:leading-10 opacity-80 w-[86%] leading-8 mt-6">
             {t('loremText')}
           </p>
-
           <div className="w-[86%] flex justify-between mt-12">
             {[
               { icon: SmartphoneIcon, label: t('phone'), value: '+98 9369514975' },
@@ -181,6 +207,7 @@ const ContactMeSection = () => {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </section>
   )

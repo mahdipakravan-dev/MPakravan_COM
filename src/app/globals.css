@@ -350,3 +350,23 @@ pre.shiki .highlighted {
     animation: none !important;
   }
 }
+
+@keyframes gridPan {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-32px, -24px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate-grid-pan {
+  animation: gridPan 24s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-grid-pan {
+    animation: none !important;
+  }
+}
