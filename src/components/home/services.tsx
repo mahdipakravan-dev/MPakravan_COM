@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 const Services = () => {
   const t = useTranslations('services')
   const containerRef = useRef<HTMLDivElement>(null)
+  const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const context = gsap.context(() => {
@@ -26,16 +27,25 @@ const Services = () => {
             duration: 1,
             scrollTrigger: {
               trigger: el,
-              start: 'top 80%', // Animation starts when the top of the element is at 80% of the viewport height
-              toggleActions: 'play none none none', // Play animation once
+              start: 'top 80%',
+              toggleActions: 'play none none none',
             },
           },
         )
       })
+
+      if (gridRef.current) {
+        gsap.to(gridRef.current, {
+          backgroundPositionY: '+=200',
+          duration: 10,
+          ease: 'none',
+          repeat: -1,
+        })
+      }
     }, containerRef)
 
     return () => {
-      context.revert() // Clean up animations on component unmount
+      context.revert()
     }
   }, [])
 
@@ -57,11 +67,6 @@ const Services = () => {
           <p className=" mt-4 leading-8 opacity-90 rtl:text-lg rtl:leading-10 font-regular">
             {props.description}
           </p>
-
-          {/* <div className="mt-8 mb-4 text-lg">
-            <span className="text-sm">{t('investment')}</span> <b className="mx-2">{props.price}</b>
-          </div> */}
-
           <Button
             variant="outlinePrimary"
             className="w-full mt-4"
@@ -77,7 +82,17 @@ const Services = () => {
   }
 
   return (
-    <section className="w-full -translate-y-20 container h-full" id="services" ref={containerRef}>
+    <section className="w-full mt-12 container h-full relative" id="services" ref={containerRef}>
+      <div
+        ref={gridRef}
+        className="pointer-events-none absolute inset-0 -z-10 opacity-30"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+          backgroundPosition: '0 0',
+        }}
+      />
       <div className="flex flex-col md:flex-row h-full">
         <div className="w-full md:w-2/5 h-full flex flex-col justify-start md:sticky right-0 top-[96px] items-start">
           <p className="text-[36px] font-bold fade-in">{t('heading')}</p>
@@ -85,15 +100,6 @@ const Services = () => {
           <p className="text-sm rtl:text-lg rtl:leading-10 opacity-60 mt-6 leading-9 fade-in w-full">
             {t('description')}
           </p>
-          <Button
-            onClick={() => {
-              window.open('/docs/cv.pdf', '_blank')
-            }}
-            variant="outlinePrimary"
-            className="mt-2 w-full rtl:text-lg z-[9999]"
-          >
-            {t('button')}
-          </Button>
         </div>
         <div className="w-full md:w-3/5 mt-4 lg:mt-0 lg:mx-8 h-full flex flex-col lg:flex-row justify-evenly gap-4">
           <div className="flex flex-col gap-y-4 lg:-mt-8">

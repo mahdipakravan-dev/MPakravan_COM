@@ -182,5 +182,12 @@
       "col3Title" : "Quick Links",
       "copyRight" : "Web Development + AI Development + Security with ❤ by Mpakravan",
       "version" : "Version 1.8.0"
+    },
+    "about": {
+      "heading": "About me",
+      "description": "I’m a frontend engineer who blends motion, accessibility, and performance to craft interfaces that feel alive. I focus on clean architecture, thoughtful animations, and maintainable design systems.",
+      "imageAlt": "Portrait and workspace",
+      "downloadCV": "Download CV",
+      "contactMe": "Contact Me"
     }
   }

@@ -363,7 +363,7 @@ pre.shiki .highlighted {
   }
 }
 .animate-grid-pan {
-  animation: gridPan 24s ease-in-out infinite;
+  animation: gridPan 12s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
   .animate-grid-pan {

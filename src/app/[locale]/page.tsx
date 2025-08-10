@@ -15,6 +15,7 @@ import Link from 'next/link'
 import { LogoEn, LogoFa } from '../../components/logo'
 import LoadingAnimation from '@/components/shared/loading-animation'
 import VideoPlayer from '@/components/home/video'
+import AboutMe from '@/components/home/about'
 
 type Props = {
   params: any
@@ -70,8 +71,9 @@ export default function Page({ params: { locale } }: Props) {
           </div>
         </div>
       </ParallaxHero>
-      <VideoPlayer />
+      {/* <VideoPlayer /> */}
 
+      <AboutMe />
       <ServicesContainer />
       <FeedbacksContainer />
       <PortfolioContainer />

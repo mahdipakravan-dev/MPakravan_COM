@@ -82,10 +82,10 @@ export default function ParallaxHero({ children, rootClassName, variant = 'auror
       {/* Grid lines with gentle pan */}
       <div
         aria-hidden
-        className={cn('absolute inset-0 pointer-events-none', variant === 'lines' ? 'opacity-50' : 'opacity-20', 'animate-grid-pan')}
+        className={cn('absolute inset-0 pointer-events-none', variant === 'lines' ? 'opacity-100' : 'opacity-80', 'animate-grid-pan')}
         style={{
           backgroundImage:
-            'linear-gradient(rgba(43,101,77,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(43,101,77,0.08) 1px, transparent 1px)',
+            'linear-gradient(rgba(43,101,77,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(43,101,77,0.1) 1px, transparent 1px)',
           backgroundSize: '64px 64px',
         }}
       />
