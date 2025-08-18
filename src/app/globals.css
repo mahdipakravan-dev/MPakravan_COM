@@ -392,13 +392,23 @@ pre.shiki .highlighted {
 .animate-grid-pan {
   animation: gridPan 12s ease-in-out infinite;
 }
-@media (max-width: 740px) {
+@media (prefers-reduced-motion: reduce) {
   .animate-grid-pan {
     animation: none !important;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .animate-grid-pan {
-    animation: none !important;
+
+@keyframes wheel {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, 8px);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
   }
 }

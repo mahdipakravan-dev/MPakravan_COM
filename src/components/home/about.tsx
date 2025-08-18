@@ -48,19 +48,16 @@ const AboutMe = () => {
 
   return (
     <section id="about-me" ref={containerRef} className="relative container min-h-[70vh] py-24">
-      <div className="pointer-events-none absolute -top-20 -left-20 h-72 w-72 rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-primary/40 via-emerald-500/30 to-cyan-400/30" />
-      <div className="pointer-events-none absolute -bottom-16 -right-16 h-80 w-80 rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-fuchsia-500/30 via-purple-500/30 to-sky-400/30" />
-
       <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
         <div className="w-full lg:w-5/12 about-fade">
           <div className="relative group">
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-primary/30 via-emerald-400/20 to-cyan-400/20 opacity-60 blur transition duration-500 group-hover:opacity-100" />
             <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl">
               <Image
-                src="/images/about.jpg"
+                src="/images/about.png"
                 alt={t('imageAlt')}
                 width={400}
-                height={1125}
+                height={800}
                 className="w-full h-auto object-cover aspect-[4/5] scale-[1.01] transition-transform duration-500 group-hover:scale-105"
                 priority
               />

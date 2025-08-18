@@ -62,7 +62,7 @@ export default function Page({ params: { locale } }: Props) {
           <div className="flex flex-col justify-center items-center relative  animate-fade-in">
             <h1 className="text-xl md:text-4xl font-bold mb-4 !text-center">
               {t('HomePageHero.hi')}
-              <span className="animate-pulse mx-3">{t('HomePageHero.name')}</span>
+              <span className="animate-pulse">{t('HomePageHero.name')}</span>
             </h1>
             <h2 className="text-xl !text-center sm:text-lg font-semibold text-primary mb-6">
               {t('HomePageHero.job')}
@@ -73,6 +73,28 @@ export default function Page({ params: { locale } }: Props) {
             </p>
           </div>
         </div>
+
+        <a
+          href="#about"
+          aria-label="Scroll to content"
+          className="group absolute bottom-6 left-1/2 -translate-x-1/2 z-[5] flex flex-col items-center gap-2"
+        >
+          {/* “Mouse” outline */}
+          <span className="block h-8 w-5 rounded-full border border-white/70 dark:border-white/60 relative">
+            <span className="absolute left-1/2 top-1.5 h-1.5 w-1 -translate-x-1/2 rounded-full bg-white/80 dark:bg-white/80 animate-[wheel_1.4s_ease-in-out_infinite]" />
+          </span>
+
+          {/* Chevrons */}
+          <svg
+            className="h-5 w-5 animate-bounce opacity-80 group-hover:opacity-100"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </a>
       </ParallaxHero>
       {/* <VideoPlayer /> */}
 
