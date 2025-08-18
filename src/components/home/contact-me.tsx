@@ -121,93 +121,93 @@ const ContactMeSection = () => {
     >
       <div className="container">
         {/* --- Lines background layer (مثل ParallaxHero: variant 'lines') --- */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none animate-grid-pan opacity-30 -z-10"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(43,101,77,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(43,101,77,0.08) 1px, transparent 1px)',
-          backgroundSize: '64px 64px',
-        }}
-      />
-      {/* هاله‌ی ملایم برای عمق */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none -z-10"
-        style={{
-          background:
-            'radial-gradient(800px 540px at 8% 20%, rgba(43,101,77,0.12), transparent 60%), radial-gradient(680px 480px at 92% 80%, rgba(43,101,77,0.08), transparent 55%)',
-          mixBlendMode: 'screen',
-        }}
-      />
-      {/* فید پایین برای یک‌دستی با بدنه */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#142a20] via-[#142a20]/80 to-transparent pointer-events-none -z-10" />
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none animate-grid-pan opacity-30 -z-10"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(43,101,77,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(43,101,77,0.08) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+          }}
+        />
+        {/* هاله‌ی ملایم برای عمق */}
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none -z-10"
+          style={{
+            background:
+              'radial-gradient(800px 540px at 8% 20%, rgba(43,101,77,0.12), transparent 60%), radial-gradient(680px 480px at 92% 80%, rgba(43,101,77,0.08), transparent 55%)',
+            mixBlendMode: 'screen',
+          }}
+        />
+        {/* فید پایین برای یک‌دستی با بدنه */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#142a20] via-[#142a20]/80 to-transparent pointer-events-none -z-10" />
 
-      <h2 className="text-left text-[36px] font-bold relative z-10">
-        <span className="text-primary">{t('contactMeTitleWhite')} </span>
-        {t('contactMeTitleGreen')}
-      </h2>
+        <h2 className="text-left text-[36px] font-bold relative z-10">
+          <span className="text-primary">{t('contactMeTitleWhite')} </span>
+          {t('contactMeTitleGreen')}
+        </h2>
 
-      <div className="flex flex-col lg:flex-row h-auto mt-4 relative z-10">
-        {/* Contact Form Section */}
-        <div className="w-full lg:w-2/5 bg-card/30 rounded-tl-md rounded-bl-md p-6 backdrop-blur-[0.5px]">
-          <span className="text-md block opacity-80">{t('contactUs')}</span>
-          <span className="text-2xl font-bold block mt-3">{t('developDream')}</span>
+        <div className="flex flex-col lg:flex-row h-auto mt-4 relative z-10">
+          {/* Contact Form Section */}
+          <div className="w-full lg:w-2/5 bg-card/30 rounded-tl-md rounded-bl-md p-6 backdrop-blur-[0.5px]">
+            <span className="text-md block opacity-80">{t('contactUs')}</span>
+            <span className="text-2xl font-bold block mt-3">{t('developDream')}</span>
 
-          <form className="mt-6 flex flex-col gap-6" onSubmit={onSubmit}>
-            <CustomInput
-              label={t('name')}
-              placeholder={t('placeholderName')}
-              type="text"
-              name="name"
-            />
-            <CustomInput
-              label={t('emailOrPhone')}
-              placeholder={t('placeholderPhone')}
-              type="text"
-              name="emailOrPhone"
-            />
-            <CustomInput
-              label={t('message')}
-              placeholder={t('placeholderMessage')}
-              type="text"
-              name="message"
-              textArea
-            />
-            {isSuccess && (
-              <span className="text-primary font-semibold fade-in">
-                Your Message has Successfully sent to me !
-              </span>
-            )}
-            <Button variant="outlinePrimary" disabled={isLoading || isSuccess}>
-              {isLoading ? t('loading') : t('button')}
-            </Button>
-          </form>
-        </div>
+            <form className="mt-6 flex flex-col gap-6" onSubmit={onSubmit}>
+              <CustomInput
+                label={t('name')}
+                placeholder={t('placeholderName')}
+                type="text"
+                name="name"
+              />
+              <CustomInput
+                label={t('emailOrPhone')}
+                placeholder={t('placeholderPhone')}
+                type="text"
+                name="emailOrPhone"
+              />
+              <CustomInput
+                label={t('message')}
+                placeholder={t('placeholderMessage')}
+                type="text"
+                name="message"
+                textArea
+              />
+              {isSuccess && (
+                <span className="text-primary font-semibold fade-in">
+                  Your Message has Successfully sent to me !
+                </span>
+              )}
+              <Button variant="outlinePrimary" disabled={isLoading || isSuccess}>
+                {isLoading ? t('loading') : t('button')}
+              </Button>
+            </form>
+          </div>
 
-        {/* Contact Information Section */}
-        <div className="hidden lg:flex w-full lg:w-3/5 relative flex-col justify-center items-center">
-          <Image src="/images/contact-bg.png" fill alt="ALT" className="block" />
-          <p className="text-md rtl:text-lg rtl:leading-10 opacity-80 w-[86%] leading-8 mt-6">
-            {t('loremText')}
-          </p>
-          <div className="w-[86%] flex justify-between mt-12">
-            {[
-              { icon: SmartphoneIcon, label: t('phone'), value: '+98 9369514975' },
-              { icon: InstagramIcon, label: t('instagram'), value: 'mpakravan.ir' },
-              { icon: GithubIcon, label: t('github'), value: 'mahdipakravan-dev' },
-            ].map(({ icon: Icon, label, value }, index) => (
-              <div key={index} className="flex">
-                <Icon width={40} height={40} className="mr-1 pt-2 text-white" />
-                <div className="flex flex-col">
-                  <span className="font-semibold text-lg">{label}</span>
-                  <span className="font-semibold text-sm opacity-80">{value}</span>
+          {/* Contact Information Section */}
+          <div className="hidden lg:flex w-full lg:w-3/5 relative flex-col justify-center items-center">
+            <Image src="/images/contact-bg.png" fill alt="ALT" className="block" />
+            <p className="text-md rtl:text-lg rtl:leading-10 opacity-80 w-[86%] leading-8 mt-6">
+              {t('loremText')}
+            </p>
+            <div className="w-[86%] flex justify-between mt-12">
+              {[
+                { icon: SmartphoneIcon, label: t('phone'), value: '+98 9369514975' },
+                { icon: InstagramIcon, label: t('instagram'), value: 'mpakravan.com' },
+                { icon: GithubIcon, label: t('github'), value: 'mahdipakravan-dev' },
+              ].map(({ icon: Icon, label, value }, index) => (
+                <div key={index} className="flex">
+                  <Icon width={40} height={40} className="mr-1 pt-2 text-white" />
+                  <div className="flex flex-col">
+                    <span className="font-semibold text-lg">{label}</span>
+                    <span className="font-semibold text-sm opacity-80">{value}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   )

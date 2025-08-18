@@ -98,7 +98,7 @@ function FeedbacksSection(props: Props) {
                       feedback.id,
                       feedback.img || 'default.png',
                     )}
-                    alt="avatar"
+                    alt={`نظر ${feedback.name} در مورد کار با مهدی پاکروان`}
                     width={100}
                     height={100}
                     className="absolute rounded-full -top-10 left-[30%]"

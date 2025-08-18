@@ -2,8 +2,6 @@ import ContactMeContainer from '@/components/home/contact-me.container'
 import FeedbacksContainer from '@/components/home/feedbacks.container'
 import FooterContainer from '@/components/home/footer.container'
 import PortfolioContainer from '@/components/home/portfolio.container'
-import ServicesContainer from '@/components/home/services.container'
-import ShowcaseSection from '@/components/home/showcase.section'
 import NavbarContainer from '@/components/shared/navbar.container'
 import ParallaxHero from '@/components/shared/ParallaxHero'
 import useLang from '@/hooks/useLang'
@@ -13,8 +11,6 @@ import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { LogoEn, LogoFa } from '../../components/logo'
-import LoadingAnimation from '@/components/shared/loading-animation'
-import VideoPlayer from '@/components/home/video'
 import AboutMe from '@/components/home/about'
 
 type Props = {
@@ -63,6 +59,7 @@ export default function Page({ params: { locale } }: Props) {
             <h1 className="text-xl md:text-4xl font-bold mb-4 !text-center">
               {t('HomePageHero.hi')}
               <span className="animate-pulse">{t('HomePageHero.name')}</span>
+              {t('HomePageHero.finisher')}
             </h1>
             <h2 className="text-xl !text-center sm:text-lg font-semibold text-primary mb-6">
               {t('HomePageHero.job')}
@@ -77,7 +74,7 @@ export default function Page({ params: { locale } }: Props) {
         <a
           href="#about"
           aria-label="Scroll to content"
-          className="group absolute bottom-6 left-1/2 -translate-x-1/2 z-[5] flex flex-col items-center gap-2"
+          className="group absolute bottom-0 left-1/2 -translate-x-1/2 z-[5] flex flex-col items-center gap-2"
         >
           {/* “Mouse” outline */}
           <span className="block h-8 w-5 rounded-full border border-white/70 dark:border-white/60 relative">

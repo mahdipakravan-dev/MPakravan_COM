@@ -14,7 +14,7 @@ import clsx from 'clsx'
 
 gsap.registerPlugin(ScrollTrigger)
 
-type Filters = 'all' | 'react' | 'node' | 'wp'
+type Filters = 'all' | 'react' | 'node' | 'wp' | 'academic' | 'game' | 'opensource'
 type Props = {
   portfolios: {
     category: string
@@ -38,7 +38,7 @@ const PortfolioSection = ({ portfolios }: Props) => {
   const sectionRef = useRef<HTMLDivElement>(null)
   const t = useTranslations('PortfolioSection')
   const lang = useLang()
-  const [filter, setFilter] = useState<Filters>('all')
+  const [filter, setFilter] = useState<Filters>('react')
   const filteredPortfolios = portfolios.filter((portfolio) => {
     if (filter === 'all') return true
     return portfolio.stack.includes(filter)
@@ -102,28 +102,49 @@ const PortfolioSection = ({ portfolios }: Props) => {
           className={filter === 'all' && 'bg-primary text-white'}
           onClick={() => setFilter('all')}
         >
-          All
+          {t('all')}
         </Button>
         <Button
           variant={'outlinePrimary'}
           className={filter === 'react' && 'bg-primary text-white'}
           onClick={() => setFilter('react')}
         >
-          React-JS
+          {t('react')}
         </Button>
         <Button
           variant={'outlinePrimary'}
           className={filter === 'node' && 'bg-primary text-white'}
           onClick={() => setFilter('node')}
         >
-          Node-JS
+          {t('backend')}
+        </Button>
+        <Button
+          variant={'outlinePrimary'}
+          className={filter === 'game' && 'bg-primary text-white'}
+          onClick={() => setFilter('game')}
+        >
+          {t('game')}
+        </Button>
+        <Button
+          variant={'outlinePrimary'}
+          className={filter === 'opensource' && 'bg-primary text-white'}
+          onClick={() => setFilter('opensource')}
+        >
+          {t('opensource')}
         </Button>
         <Button
           variant={'outlinePrimary'}
           className={filter === 'wp' && 'bg-primary text-white'}
           onClick={() => setFilter('wp')}
         >
-          Wordpress-PHP
+          {t('wp')}
+        </Button>
+        <Button
+          variant={'outlinePrimary'}
+          className={filter === 'academic' && 'bg-primary text-white'}
+          onClick={() => setFilter('academic')}
+        >
+          {t('academic')}
         </Button>
       </div>
 

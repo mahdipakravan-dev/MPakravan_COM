@@ -1,118 +1,125 @@
 {
-    "LocaleLayout": {
-      "title": "Mahdi Pakravan | Web & AI Developer"
-    },
-    "config" : {
-      "language": "en",
-      "displayName" : "English"
-    },
-    "HomePageHero": {
-      "hi": "Hi I'm ",
-      "name": "Mahdi Pakravan",
-      "finisher" : "!",
-      "job": "Web & AI Developer",
-      "description": "Whether you're looking for web development, AI solutions, or professional mentorship, I'm here to help with innovative design, secure development, and expert guidance in both web and AI technologies.",
-      "video" : "https://persian17.asset.aparat.com/aparat-video/c75a2385d3cb26aae174940b6d7a2da361268571-720p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjhhNzE4NGVlOTQ5YmNhOTFiOWZhMTQ5ZjQwNTFjNGVmIiwiZXhwIjoxNzMyODIzOTUzLCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.KJCf8zuvXfXCWbYpyoHTcdZwt_DYlbMnpkmwHrZkjXI"
-    },
-    "ShowcaseSection": {
-      "title": "What I Do",
-      "description": "I specialize in creating modern, efficient, and scalable solutions for web and mobile applications.",
-      "features": {
-        "development": {
-          "title": "Full-Stack Development",
-          "description": "Building robust and scalable applications using modern technologies and best practices."
-        },
-        "web": {
-          "title": "Web Development",
-          "description": "Creating responsive and interactive web applications with cutting-edge frameworks."
-        },
-        "mobile": {
-          "title": "Mobile Development",
-          "description": "Developing cross-platform mobile applications that deliver exceptional user experiences."
-        }
-      }
-    },
-    "Sections": {
-      "home" : "Home",
-      "about" : "About",
-      "portfolio" : "Portfolio",
-      "contact" : "Contact Me",
-      "feedbacks" : "Feedbacks",
-      "blog" : "Blog",
-      "services" : "Services",
-      "language" : "Language"
-    },
-    "services": {
-      "heading": "My Services",
-      "description": "I believe it's my duty to share my knowledge and experience in both web development and AI with you. In this section, I offer services for those passionate about these fields. You can also download my resume below to learn more about me.",
-      "button": "Download Resume",
-      "investment": "Investment Amount:",
-      "take": "Get",
-      "websiteDevelopment": {
-        "title": "Web Development Training",
-        "description": "If you'd like a private tutor to learn web development, I can help you. Just send me a message on Telegram, and we can discuss your learning path.",
-        "price": "Contact for details",
-        "time": "2-hour private session",
-        "link": "https://t.me/mahdipakravan"
+  "LocaleLayout": {
+    "title": "Mahdi Pakravan | Web & AI Developer"
+  },
+  "config": {
+    "language": "en",
+    "displayName": "English"
+  },
+  "HomePageHero": {
+    "hi": "Hi I'm ",
+    "name": "Mahdi Pakravan",
+    "finisher": "!",
+    "job": "Web & AI Developer",
+    "description": "Whether you're looking for web development, AI solutions, or professional mentorship, I'm here to help with innovative design, secure development, and expert guidance in both web and AI technologies.",
+    "video": "https://persian17.asset.aparat.com/aparat-video/c75a2385d3cb26aae174940b6d7a2da361268571-720p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjhhNzE4NGVlOTQ5YmNhOTFiOWZhMTQ5ZjQwNTFjNGVmIiwiZXhwIjoxNzMyODIzOTUzLCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.KJCf8zuvXfXCWbYpyoHTcdZwt_DYlbMnpkmwHrZkjXI"
+  },
+  "ShowcaseSection": {
+    "title": "What I Do",
+    "description": "I specialize in creating modern, efficient, and scalable solutions for web and mobile applications.",
+    "features": {
+      "development": {
+        "title": "Full-Stack Development",
+        "description": "Building robust and scalable applications using modern technologies and best practices."
       },
-      "websiteDesign": {
-        "title": "AI Development & Consultation",
-        "description": "Need help with AI implementation or have questions about AI development? I can assist you with AI solutions, model development, and integration.",
-        "price": "500,000 Toman",
-        "time": "30-minute private session",
-        "link": "https://t.me/mahdipakravan"
+      "web": {
+        "title": "Web Development",
+        "description": "Creating responsive and interactive web applications with cutting-edge frameworks."
       },
-      "websiteSecurity": {
-        "title": "Project Development",
-        "description": "Whether it's a web project or an AI solution, I can help! I assist with all phases of development, including design, coding, maintenance, and security. Just click the button below.",
-        "price": "200,000 Toman",
-        "time": "30-minute private session",
-        "link": "https://t.me/mahdipakravan"
-      },
-      "websiteMentorship": {
-        "title": "Mentorship",
-        "description": "In this mentorship program, you can ask anything about web development, AI, your career path, resume reviews, or mock interviews. Just click the link on the website.",
-        "time": "30-minute private session",
-        "price": "Free",
-        "link": "https://adplist.org/mentors/mahdi-pakravan"
+      "mobile": {
+        "title": "Mobile Development",
+        "description": "Developing cross-platform mobile applications that deliver exceptional user experiences."
       }
+    }
+  },
+  "Sections": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact Me",
+    "feedbacks": "Feedbacks",
+    "blog": "Blog",
+    "services": "Services",
+    "language": "Language"
+  },
+  "services": {
+    "heading": "My Services",
+    "description": "I believe it's my duty to share my knowledge and experience in both web development and AI with you. In this section, I offer services for those passionate about these fields. You can also download my resume below to learn more about me.",
+    "button": "Download Resume",
+    "investment": "Investment Amount:",
+    "take": "Get",
+    "websiteDevelopment": {
+      "title": "Web Development Training",
+      "description": "If you'd like a private tutor to learn web development, I can help you. Just send me a message on Telegram, and we can discuss your learning path.",
+      "price": "Contact for details",
+      "time": "2-hour private session",
+      "link": "https://t.me/mahdipakravan"
     },
-    "FeedbacksSection": {
-      "title": "Feedbacks",
-      "description": "Your feedback means the world to me. Here, you'll find reviews from my clients and collaborators who have shared their experience working with me.",
-      "showMore": "Show more feedbacks",
-      "feedback": {
-        "alt": "Feedback image",
-        "comment": "Mahdi has a very deep knowledge of Frontend Development and making websites. I worked with him, and he is fantastic. I highly recommend Mahdi!",
-        "name": "Mo.Ali Ali Panah",
-        "role": "Software Engineer",
-        "company": "Digikala"
-      }
+    "websiteDesign": {
+      "title": "AI Development & Consultation",
+      "description": "Need help with AI implementation or have questions about AI development? I can assist you with AI solutions, model development, and integration.",
+      "price": "500,000 Toman",
+      "time": "30-minute private session",
+      "link": "https://t.me/mahdipakravan"
     },
-    "PortfolioSection": {
-      "greenTitle" : "My",
-      "whiteTitle" : "Portfolio",
-      "description": "In this section, you can explore some of the projects I've worked on and the results achieved with my clients. Each project tells a unique story, and by clicking on them, you can learn more."
+    "websiteSecurity": {
+      "title": "Project Development",
+      "description": "Whether it's a web project or an AI solution, I can help! I assist with all phases of development, including design, coding, maintenance, and security. Just click the button below.",
+      "price": "200,000 Toman",
+      "time": "30-minute private session",
+      "link": "https://t.me/mahdipakravan"
     },
-    "ContactMeSection" : {
-      "contactMeTitleWhite": "Contact",
-      "contactMeTitleGreen": "Me",
-      "contactUs": "Contact Us",
-      "developDream": "Let's Develop Your Dream!",
-      "name": "Name",
-      "phoneNumber": "Email / Phone Number",
-      "message": "Message",
-      "placeholderName": "Please enter your name",
-      "placeholderPhone": "Please enter your phone number",
-      "placeholderMessage": "Your Message",
-      "button": "Connect Together!",
-      "loremText": "If you have any questions or want to start a new collaboration, I'm always ready to get in touch. You can reach out to me via the form below, and I'll respond as soon as possible. Whether it's about a new project or seeking advice, I'd be happy to collaborate with you and turn your ideas into reality.",
-      "phone": "Phone Number",
-      "instagram": "Instagram",
-      "github": "Github",
-      "loading" : "Loading..."
-    },
-      "CareerSection": {
+    "websiteMentorship": {
+      "title": "Mentorship",
+      "description": "In this mentorship program, you can ask anything about web development, AI, your career path, resume reviews, or mock interviews. Just click the link on the website.",
+      "time": "30-minute private session",
+      "price": "Free",
+      "link": "https://adplist.org/mentors/mahdi-pakravan"
+    }
+  },
+  "FeedbacksSection": {
+    "title": "Feedbacks",
+    "description": "Your feedback means the world to me. Here, you'll find reviews from my clients and collaborators who have shared their experience working with me.",
+    "showMore": "Show more feedbacks",
+    "feedback": {
+      "alt": "Feedback image",
+      "comment": "Mahdi has a very deep knowledge of Frontend Development and making websites. I worked with him, and he is fantastic. I highly recommend Mahdi!",
+      "name": "Mo.Ali Ali Panah",
+      "role": "Software Engineer",
+      "company": "Digikala"
+    }
+  },
+  "PortfolioSection": {
+    "greenTitle": "My",
+    "whiteTitle": "Portfolio",
+    "description": "In this section, you can explore some of the projects I've worked on and the results achieved with my clients. Each project tells a unique story, and by clicking on them, you can learn more.",
+    "all": "All Projects",
+    "react": "React",
+    "backend": "Backend",
+    "game": "Game",
+    "opensource": "Open-Source",
+    "wp": "Wordpress Theme and Plugin",
+    "academic": "Academic"
+  },
+  "ContactMeSection": {
+    "contactMeTitleWhite": "Contact",
+    "contactMeTitleGreen": "Me",
+    "contactUs": "Contact Us",
+    "developDream": "Let's Develop Your Dream!",
+    "name": "Name",
+    "phoneNumber": "Email / Phone Number",
+    "message": "Message",
+    "placeholderName": "Please enter your name",
+    "placeholderPhone": "Please enter your phone number",
+    "placeholderMessage": "Your Message",
+    "button": "Connect Together!",
+    "loremText": "If you have any questions or want to start a new collaboration, I'm always ready to get in touch. You can reach out to me via the form below, and I'll respond as soon as possible. Whether it's about a new project or seeking advice, I'd be happy to collaborate with you and turn your ideas into reality.",
+    "phone": "Phone Number",
+    "instagram": "Instagram",
+    "github": "Github",
+    "loading": "Loading..."
+  },
+  "CareerSection": {
     "title": "Career Journey",
     "description": "Explore my professional journey and experience in the world of web development.",
     "viewMore": "View More"
@@ -177,17 +184,17 @@
     }
   },
   "FooterSection": {
-      "description": "Focusing on the discipline, colors, and emotions of your brand, I create solutions that not only reflect your values but also provide an unforgettable experience for users, whether it's web development or AI implementation.",
-      "col2Title" : "Services",
-      "col3Title" : "Quick Links",
-      "copyRight" : "Web Development + AI Development + Security with ❤ by Mpakravan",
-      "version" : "Version 1.8.0"
-    },
-    "about": {
-      "heading": "About me",
-      "description": "I’m a frontend engineer who blends motion, accessibility, and performance to craft interfaces that feel alive. I focus on clean architecture, thoughtful animations, and maintainable design systems.",
-      "imageAlt": "Portrait and workspace",
-      "downloadCV": "Download CV",
-      "contactMe": "Contact Me"
-    }
+    "description": "Focusing on the discipline, colors, and emotions of your brand, I create solutions that not only reflect your values but also provide an unforgettable experience for users, whether it's web development or AI implementation.",
+    "col2Title": "Services",
+    "col3Title": "Quick Links",
+    "copyRight": "Web Development + AI Development + Security with ❤ by Mpakravan",
+    "version": "Version 2.0"
+  },
+  "about": {
+    "heading": "About me",
+    "description": "I’m a frontend engineer who blends motion, accessibility, and performance to craft interfaces that feel alive. I focus on clean architecture, thoughtful animations, and maintainable design systems.",
+    "imageAlt": "Portrait and workspace",
+    "downloadCV": "Download CV",
+    "contactMe": "Contact Me"
   }
+}

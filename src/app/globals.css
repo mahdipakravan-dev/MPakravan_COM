@@ -3,9 +3,18 @@
 @tailwind utilities;
 
 :root[dir='rtl'] * {
-  --font-family: var(--font-morabba);
+  --font-family: var(--font-title);
   direction: rtl;
   text-align: right;
+}
+
+:root[dir='rtl'] h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-morabba) !important;
 }
 
 :root[dir='ltr'] * {
