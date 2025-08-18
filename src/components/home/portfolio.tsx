@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl'
 import { cn, makeImageUrl } from '@/lib/utils'
 import useLang from '@/hooks/useLang'
 import Link from 'next/link'
-import { Dialog, DialogContent, DialogDescription, DialogTitle , DialogHeader } from '../ui/dialog'
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogHeader } from '../ui/dialog'
 import clsx from 'clsx'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -44,10 +44,16 @@ const PortfolioSection = ({ portfolios }: Props) => {
     return portfolio.stack.includes(filter)
   })
 
-  const [selectedPortfolio, setSelectedPortfolio] = useState<Props['portfolios'][number] | null>(null)
+  const [selectedPortfolio, setSelectedPortfolio] = useState<Props['portfolios'][number] | null>(
+    null,
+  )
 
   const onClickPortfolio = (portfolio: Props['portfolios'][number]) => {
-    setSelectedPortfolio(portfolio)
+    const url = portfolio.url
+    if (url) {
+      window.open(url, '_blank')
+    }
+    // setSelectedPortfolio(portfolio)
   }
   const closeModal = () => {
     setSelectedPortfolio(null)
@@ -161,21 +167,25 @@ const PortfolioSection = ({ portfolios }: Props) => {
         </div>
       </div>
 
-      <Dialog open={selectedPortfolio !== null} onOpenChange={(open) => setSelectedPortfolio(prev => open ? prev : null)}>
-        <DialogContent className='h-[90vh] overflow-scroll'>
+      <Dialog
+        open={selectedPortfolio !== null}
+        onOpenChange={(open) => setSelectedPortfolio((prev) => (open ? prev : null))}
+      >
+        <DialogContent className="h-[90vh] overflow-scroll">
           <DialogHeader>
-            <DialogTitle className='my-6'>{lang === "en" ? selectedPortfolio?.nameEn : selectedPortfolio?.name}</DialogTitle>
-            <DialogDescription className={clsx(
-              'leading-10 text-white',
-              lang === "fa" && "text-md"
-            )} dangerouslySetInnerHTML={{
-              __html : lang === "en" ? selectedPortfolio?.enDescription : selectedPortfolio?.description
-            }}>
-            </DialogDescription>
+            <DialogTitle className="my-6">
+              {lang === 'en' ? selectedPortfolio?.nameEn : selectedPortfolio?.name}
+            </DialogTitle>
+            <DialogDescription
+              className={clsx('leading-10 text-white', lang === 'fa' && 'text-md')}
+              dangerouslySetInnerHTML={{
+                __html:
+                  lang === 'en' ? selectedPortfolio?.enDescription : selectedPortfolio?.description,
+              }}
+            ></DialogDescription>
           </DialogHeader>
-          </DialogContent>
-        </Dialog>
-
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }

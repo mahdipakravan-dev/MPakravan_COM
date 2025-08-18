@@ -16,7 +16,7 @@
 
 @layer base {
   :root {
-    --x-animation-duration: 16s;
+    --x-animation-duration: 66s;
     --tw-ring-offset-width: 0;
     /* Primary green color scheme */
     --primary: #2d6b4f;
@@ -60,11 +60,13 @@
   * {
     @apply border-border;
     scroll-behavior: smooth;
+    /* outline: 1px solid red; */
   }
   body {
     @apply text-foreground overflow-x-hidden;
     font-family: var(--font-family);
     background-color: var(--background);
+    overflow-x: hidden;
     /* background-image: url('/images/starry-bg.jpg');
     background-attachment: fixed;
     background-size: cover; */
@@ -76,39 +78,39 @@
   .blog-card-hover {
     @apply transition-all duration-500 ease-out;
   }
-  
+
   .blog-card-hover:hover {
     @apply transform -translate-y-2;
   }
-  
+
   .image-scale-hover {
     @apply transition-transform duration-700 ease-out;
   }
-  
+
   .image-scale-hover:hover {
     @apply transform scale-110;
   }
-  
+
   .text-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .glow-effect {
     @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-700 blur-xl;
     background: linear-gradient(45deg, transparent, rgba(45, 107, 79, 0.1), transparent);
   }
-  
+
   .glow-effect:hover {
     @apply opacity-100;
   }
-  
+
   .slide-in-arrow {
     @apply transition-all duration-300 ease-out;
   }
-  
+
   .slide-in-arrow:hover {
     @apply transform translate-x-1;
   }
@@ -138,8 +140,6 @@ input:focus-visible {
   background: #4a8b6f;
   opacity: 1;
 }
-
-
 
 @keyframes shine {
   0% {
@@ -268,7 +268,8 @@ pre.shiki .highlighted {
 
 /* Parallax Hero Animations */
 @keyframes gradientShift {
-  0%, 100% {
+  0%,
+  100% {
     filter: hue-rotate(0deg);
   }
   25% {
@@ -283,7 +284,8 @@ pre.shiki .highlighted {
 }
 
 @keyframes gridFloat {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.08;
     transform: translate(0, 0) scale(1);
   }
@@ -296,13 +298,14 @@ pre.shiki .highlighted {
     transform: translate(-3px, 5px) scale(0.98);
   }
   75% {
-    opacity: 0.10;
+    opacity: 0.1;
     transform: translate(2px, -2px) scale(1.01);
   }
 }
 
 @keyframes shapeFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
   25% {
@@ -325,23 +328,47 @@ pre.shiki .highlighted {
   }
 }
 @keyframes baseDrift {
-  0% { transform: translate3d(0,0,0) }
-  50% { transform: translate3d(-2%, -1%, 0) }
-  100% { transform: translate3d(0,0,0) }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-2%, -1%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 @keyframes gridPan {
-  0% { transform: translate3d(0,0,0) }
-  50% { transform: translate3d(-32px, -24px, 0) }
-  100% { transform: translate3d(0,0,0) }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-32px, -24px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 @keyframes vignetteSweep {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-.animate-base-drift { animation: baseDrift 28s ease-in-out infinite; }
-.animate-grid-pan { animation: gridPan 24s ease-in-out infinite; }
-.animate-vignette-sweep { animation: vignetteSweep 26s ease-in-out infinite; }
+.animate-base-drift {
+  animation: baseDrift 28s ease-in-out infinite;
+}
+.animate-grid-pan {
+  animation: gridPan 24s ease-in-out infinite;
+}
+.animate-vignette-sweep {
+  animation: vignetteSweep 26s ease-in-out infinite;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .animate-base-drift,
@@ -364,6 +391,11 @@ pre.shiki .highlighted {
 }
 .animate-grid-pan {
   animation: gridPan 12s ease-in-out infinite;
+}
+@media (max-width: 740px) {
+  .animate-grid-pan {
+    animation: none !important;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .animate-grid-pan {
