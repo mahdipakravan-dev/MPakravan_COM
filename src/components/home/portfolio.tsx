@@ -96,7 +96,7 @@ const PortfolioSection = ({ portfolios }: Props) => {
         {t('description')}
       </p>
 
-      <div className="flex flex-wrap justify-center gap-2 mt-12">
+      <div className="flex flex-wrap justify-center gap-2 mt-12 py-4 z-[4] top-0">
         <Button
           variant={'outlinePrimary'}
           className={filter === 'all' && 'bg-primary text-white'}
@@ -156,7 +156,7 @@ const PortfolioSection = ({ portfolios }: Props) => {
               rel="noopener noreferrer"
               onClick={() => onClickPortfolio(portfolio)}
             >
-              <div className="relative w-full min-w-[200px] overflow-hidden rounded-md shadow-lg project-card group transform transition-transform duration-300 hover:scale-105">
+              <div className="relative w-full w-full md:w-[280px] h-[130px] overflow-hidden rounded-md shadow-lg project-card group transform transition-transform duration-300 hover:scale-105">
                 <Image
                   src={makeImageUrl(
                     portfolio.collectionId,
