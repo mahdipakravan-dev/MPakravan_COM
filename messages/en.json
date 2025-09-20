@@ -1,4 +1,10 @@
 {
+  "banner": {
+    "title": "Mentorship Session",
+    "title-2": "Resume Review, Learning Path Analysis, Career Roadmap Design",
+    "title-3": "با ۳ جلسه اول کاملا رایگان",
+    "cta": "Reserve 1st session"
+  },
   "LocaleLayout": {
     "title": "Mahdi Pakravan | Web & AI Developer"
   },
@@ -188,7 +194,7 @@
     "col2Title": "Services",
     "col3Title": "Quick Links",
     "copyRight": "Web Development + AI Development + Security with ❤ by Mpakravan",
-    "version": "Version 2.1"
+    "version": "Version 2.2"
   },
   "about": {
     "heading": "About me",

@@ -12,6 +12,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { LogoEn, LogoFa } from '../../components/logo'
 import AboutMe from '@/components/home/about'
+import { Button } from '@/components/ui/button'
 
 type Props = {
   params: any
@@ -22,29 +23,31 @@ export default function Page({ params: { locale } }: Props) {
   const lang = useLang()
   const t = useTranslations()
 
-  const hasBanner = false
+  const hasBanner = true
 
   return (
     <>
       {hasBanner && (
         <Link
-          href={'https://b2n.ir/m08485'}
+          href={'https://adplist.org/mentors/mahdi-pakravan'}
           className={clsx(
-            'fixed cursor-pointer top-0 left-0 w-full h-24 z-[3] flex justify-center items-center overflow-hidden bg-black',
+            'absolute bottom-72 w-full py-2 bg-black rounded p-0 md:w-auto md:fixed md:right-12 md:bottom-12 md:h-24 md:py-24 md:px-12 cursor-pointer z-[5] flex flex-col justify-center items-center overflow-hidden md:bg-black',
           )}
         >
-          <Image src={'/images/cover.png'} width={1024} height={200} alt="cover" />
+          <h2 className="hidden md:block text-2xl font-bold">{t('banner.title')}</h2>
+          <span className="mt-4">{t('banner.title-2')}</span>
+          <Button className="z-[4] mt-4">{t('banner.cta')}</Button>
         </Link>
       )}
       {/* <LoadingAnimation /> */}
       <ParallaxHero
-        rootClassName={clsx('h-[80vh] md:h-[90vh]', hasBanner && 'h-[80vh]')}
+        rootClassName={clsx('h-[80vh] md:h-[90vh] z-[2]', hasBanner && 'h-[80vh]')}
         variant="lines"
       >
         <header
           className={clsx(
             'absolute w-full top-4 md:top-10 z-[4] ',
-            hasBanner && 'top-28 md:top-32',
+            // hasBanner && 'top-28 md:top-32',
           )}
         >
           <div className="container flex justify-between items-center ">
